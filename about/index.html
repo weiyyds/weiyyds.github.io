@@ -353,7 +353,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getHours() + '.jpg';
+    var bannerUrl = "/medias/banner/" + Math.floor(Math.random()*7) + '.jpg';
     $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
 </script>
 
@@ -370,13 +370,18 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">1</a></span>
+    <span class="count"><a href="/">4</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 
+
+<div class="statis">
+    <span class="count"><a href="/tags">2</a></span>
+    <span class="name">标签</span>
+</div>
 
 
                     </div>
@@ -390,13 +395,18 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">1</a></span>
+    <span class="count"><a href="/">4</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 
+
+<div class="statis">
+    <span class="count"><a href="/tags">2</a></span>
+    <span class="name">标签</span>
+</div>
 
 
                                 </div>
@@ -538,7 +548,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,1],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,4],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -604,7 +614,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: []
+                data: ["springboot","vue"]
             }
         ],
         yAxis: [
@@ -617,7 +627,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [],
+                data: [1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -785,6 +795,18 @@
     <div class="other-skills chip-container" data-aos="zoom-in-up">
         <div class="sub-title center-align"><i class="fa fa-book"></i>&nbsp;&nbsp;其他技能</div>
         <div class="tag-chips center-align">
+            
+            
+            <a href="/tags/springboot/">
+                <span class="chip center-align waves-effect waves-light chip-default">springboot</span>
+            </a>
+            
+            
+            
+            <a href="/tags/vue/">
+                <span class="chip center-align waves-effect waves-light chip-default">vue</span>
+            </a>
+            
             
         </div>
     </div>
@@ -1128,14 +1150,33 @@ $(function () {
     <!--腾讯兔小巢-->
     
     
-
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
     
 
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
     
 
     
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
+	<!-- 雪花特效 --> 
+	 
+	<script type="text/javascript" src="/libs/others/snow.js"></script> 
+	
+
+
+
+	
 
 </body>
 
