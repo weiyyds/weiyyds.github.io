@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo, 个人博客">
+    <meta name="keywords" content="hexo个人博客matery主题, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo | 个人博客</title>
+    <title>hexo个人博客matery主题 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo</h1>
+                    <h1 class="description center-align post-title">hexo个人博客matery主题</h1>
                 </div>
             </div>
         </div>
@@ -464,8 +464,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>内容显示</p>
-<p><img src="img/image-20210808161807868.png" alt="image-20210808161807868"></p>
+                <h3 id="使用hexo加github搭建个人博客"><a href="#使用hexo加github搭建个人博客" class="headerlink" title="使用hexo加github搭建个人博客"></a>使用hexo加github搭建个人博客</h3><p>1.安装node环境</p>
+<p>2.注册github账号</p>
+<p>3.创建一个仓库，必须以weiyyds（这里是自己的用户名）.github.io命名</p>
+<p>4.在github上创建一个新的文件</p>
+<p>建立一个index.html文件</p>
+<p>然后浏览器访问weiyyds.github.io就可以访问到index文件</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806180111593.png" alt="image-20210806180111593"></p>
+<h3 id="如果遇到weiyyds-github-io连接被拒绝"><a href="#如果遇到weiyyds-github-io连接被拒绝" class="headerlink" title="如果遇到weiyyds.github.io连接被拒绝"></a>如果遇到weiyyds.github.io连接被拒绝</h3><p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806181031110.png" alt="image-20210806181031110"></p>
+<p>往hosts文件最后一行加上ip地址 xxx(自己github用户名).github.io</p>
+<p>(ip为你的xxx.github.io的ip)不是你本机电脑IP</p>
+<p>通过ipip.net访问该网站查询ip</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806180851147.png" alt="image-20210806180851147"></p>
+<p>然后刷新浏览器访问即可</p>
+<h3 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+</blockquote>
+<h3 id="获取githubSSH"><a href="#获取githubSSH" class="headerlink" title="获取githubSSH"></a>获取githubSSH</h3><blockquote>
+<p>ssh-keygen -t rsa -C “邮箱”</p>
+<p>然后回车，回车，秘钥生成</p>
+</blockquote>
+<p>打开github的setting的SSH与GPG公钥</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806182725322.png" alt="image-20210806182725322"></p>
+<p>将生成的公钥复制到ssh与GPG公钥上</p>
+<h3 id="下载hexo"><a href="#下载hexo" class="headerlink" title="下载hexo"></a>下载hexo</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a></p>
+<p>#这个是文档找到下面这个命令</p>
+</blockquote>
+<pre class=" language-javascript"><code class="language-javascript">npm install <span class="token operator">-</span>g hexo<span class="token operator">-</span>cli
+</code></pre>
+<p>cmd命令然后在blog文件（自己新建的）npm下载</p>
+<p>2.接下去</p>
+<p>hexo init 博客名称</p>
+<p>#hexo init weiyydsBlog</p>
+<p>3.cd weiyydsBlog进入博客目录</p>
+<p>4.npm install命令安装依赖</p>
+<p>5.启动博客：hexo s -p 5555</p>
+<p>浏览器访问：<a target="_blank" rel="noopener" href="http://localhost:5555/">http://localhost:5555/</a></p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806184804077.png" alt="image-20210806184804077"></p>
+<p>这是官方自带主题</p>
+<h3 id="hexo发布到github"><a href="#hexo发布到github" class="headerlink" title="hexo发布到github"></a>hexo发布到github</h3><blockquote>
+<p> <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/one-command-deployment">https://hexo.io/zh-cn/docs/one-command-deployment</a></p>
+</blockquote>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806211016660.png" alt="image-20210806211016660"></p>
+<p>hexo g</p>
+<p>hexo d</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save
+</code></pre>
+<h3 id="安装hexo之next主题"><a href="#安装hexo之next主题" class="headerlink" title="安装hexo之next主题"></a>安装hexo之next主题</h3><p>在主题处搜索next</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806213834795.png" alt="image-20210806213834795"></p>
+<p>点击进入跳转到github的源码地址</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806214131214.png" alt="image-20210806214131214"></p>
+<p>解压出来文件命名为next,放在themes目录下</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210806214955518.png" alt="image-20210806214955518"></p>
+<p>hexo s -p 5555  #本地启动查看效果</p>
+<p>hexo g</p>
+<p>hexo d</p>
+<p>就可以通过域名访问到github上的项目了</p>
+<h3 id="matery主题之轮播图的左右按钮实现"><a href="#matery主题之轮播图的左右按钮实现" class="headerlink" title="matery主题之轮播图的左右按钮实现"></a>matery主题之轮播图的左右按钮实现</h3><p>在博客的根目录下cmd命令，</p>
+<p>输入hexo new “文章标题”创建文章</p>
+<p>该md文件会自动放在source=&gt;_posts下</p>
+<p>在md文件下输入cover:true轮播图的按钮就出来了</p>
+<pre class=" language-bash"><code class="language-bash">title: vue学习
+cover: <span class="token boolean">true</span>
+</code></pre>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210808102412442.png" alt="image-20210808102412442"></p>
+<h3 id="雪花效果"><a href="#雪花效果" class="headerlink" title="雪花效果"></a>雪花效果</h3><p>方法：在themes/matery/source/libs/others下新建文件snow.js，并插入如下代码：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">/*样式一*/</span>
 <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>$<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     $<span class="token punctuation">.</span>fn<span class="token punctuation">.</span>snow <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -637,6 +701,34 @@ flakeMove<span class="token punctuation">.</span>prototype<span class="token pun
 <span class="token keyword">var</span> snow <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">snowFall</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>maxFlake<span class="token punctuation">:</span><span class="token number">60</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 snow<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<p>然后在themes/matery/_config里libs:下面的js:后面首行添加</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/xuehua1.png" alt="xuehua1"></p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/xuehua2.png" alt="xuehua2"></p>
+<blockquote>
+<p>snow: /libs/others/snow.js</p>
+</blockquote>
+<p>在themes/matery/layout/layout.ejs里添加如下代码：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 雪花特效 <span class="token operator">--</span><span class="token operator">></span> 
+<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>theme<span class="token punctuation">.</span>snow<span class="token punctuation">.</span>enable<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token operator">%</span><span class="token operator">></span> 
+<span class="token operator">&lt;</span>script type<span class="token operator">=</span><span class="token string">"text/javascript"</span> src<span class="token operator">=</span><span class="token string">"&lt;%- theme.libs.js.snow %>"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span> 
+<span class="token operator">&lt;</span><span class="token operator">%</span> <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token operator">%</span><span class="token operator">></span>
+</code></pre>
+<p>最后在themes/matery/_config.yml添加：</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 雪花特效</span>
+<span class="token key atrule">snow</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+<h3 id="使用域名156256-link代替weiyyds-github-io"><a href="#使用域名156256-link代替weiyyds-github-io" class="headerlink" title="使用域名156256.link代替weiyyds.github.io"></a>使用域名156256.link代替weiyyds.github.io</h3><p>1.在自己博客项目的根目录下的source文件夹里面创建CNAME文件（文件没有后缀）</p>
+<p>记事本打开，里面放域名156256.link</p>
+<p>2.在github上面找到自己博客项目的仓库，在setting里面</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/git1.png" alt="git1"></p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/git2-1628407302526.png" alt="git2-1628407302526"></p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/git3.png" alt="git3"></p>
+<p>3.解析域名</p>
+<p>我这里是西部数码的域名</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/git4.png" alt="git4"></p>
+<p>最终效果就是这样</p>
+<p><img src="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/image-20210808152851870.png" alt="image-20210808152851870"></p>
 
                 
             </div>
@@ -663,7 +755,7 @@ snow<span class="token punctuation">.</span><span class="token function">start</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://weiyyds.github.io/2021/08/08/hexo/">https://weiyyds.github.io/2021/08/08/hexo/</a>
+                    <a href="https://weiyyds.github.io/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/">https://weiyyds.github.io/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -870,54 +962,18 @@ snow<span class="token punctuation">.</span><span class="token function">start</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/08/08/hexo-shang-chuan-de-tu-pian-wu-fa-xian-shi/">
+                <a href="/2021/08/08/hexo-ge-ren-bo-ke-matery-zhu-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="hexo上传的图片无法显示">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="hexo个人博客matery主题">
                         
-                        <span class="card-title">hexo上传的图片无法显示</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            wei
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/08/08/springboot/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="springboot">
-                        
-                        <span class="card-title">springboot</span>
+                        <span class="card-title">hexo个人博客matery主题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -938,13 +994,43 @@ snow<span class="token punctuation">.</span><span class="token function">start</
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/springboot/">
-                        <span class="chip bg-color">springboot</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/08/08/hexo-shang-chuan-de-tu-pian-wu-fa-xian-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="hexo上传的图片无法显示">
+                        
+                        <span class="card-title">hexo上传的图片无法显示</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            wei
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
