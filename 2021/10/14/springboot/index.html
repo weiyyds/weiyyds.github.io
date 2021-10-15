@@ -772,6 +772,105 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
 <h3 id="按需开启自动配置项"><a href="#按需开启自动配置项" class="headerlink" title="按需开启自动配置项"></a>按需开启自动配置项</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 虽然我们127个场景的自动配置项启动的时候默认全部加载进容器中</span>
 <span class="token comment" spellcheck="true"># 最终会按需配置生效  依据条件装配规则生效</span>
 </code></pre>
+<h3 id="修改默认配置"><a href="#修改默认配置" class="headerlink" title="修改默认配置"></a>修改默认配置</h3><pre class=" language-java"><code class="language-java">        <span class="token annotation punctuation">@Bean</span>
+        <span class="token annotation punctuation">@ConditionalOnBean</span><span class="token punctuation">(</span>MultipartResolver<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//容器中有这个类型组件</span>
+        <span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> DispatcherServlet<span class="token punctuation">.</span>MULTIPART_RESOLVER_BEAN_NAME<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//容器中没有这个名字 multipartResolver 的组件</span>
+        <span class="token keyword">public</span> MultipartResolver <span class="token function">multipartResolver</span><span class="token punctuation">(</span>MultipartResolver resolver<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//给@Bean标注的方法传入了对象参数，这个参数的值就会从容器中找。</span>
+            <span class="token comment" spellcheck="true">//SpringMVC multipartResolver。防止有些用户配置的文件上传解析器不符合规范</span>
+            <span class="token comment" spellcheck="true">// Detect if the user has created a MultipartResolver but named it incorrectly</span>
+            <span class="token keyword">return</span> resolver<span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+给容器中加入了文件上传解析器；
+</code></pre>
+<p>SpringBoot默认会在底层配好所有的组件。但是如果用户自己配置了以用户的优先</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
+    <span class="token annotation punctuation">@ConditionalOnMissingBean</span>
+    <span class="token keyword">public</span> CharacterEncodingFilter <span class="token function">characterEncodingFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 总结</span>
+总结：
+● SpringBoot先加载所有的自动配置类  xxxxxAutoConfiguration
+● 每个自动配置类按照条件进行生效，默认都会绑定配置文件指定的值。xxxxProperties里面拿。xxxProperties和配置文件进行了绑定
+● 生效的配置类就会给容器中装配很多组件
+● 只要容器中有这些组件，相当于这些功能就有了
+● 定制化配置
+  ○ 用户直接自己@Bean替换底层的组件
+  ○ 用户去看这个组件是获取的配置文件什么值就去修改。
+xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span class="token operator">></span> xxxxProperties里面拿值  ----<span class="token operator">></span> application.properties
+</code></pre>
+<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
+<li><p>引入场景依赖</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters">https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.build-systems.starters</a></li>
+</ul>
+</li>
+<li><p>查看自动配置了哪些</p>
+<ul>
+<li>自己分析，比较麻烦</li>
+<li>在application.properties加上debug=true，显示分析报告</li>
+<li>Negative matches:下的都没有生效</li>
+<li>Positive matches:生效的</li>
+<li>Did not match: 就是没有自动装配<pre><code>     - @ConditionalOnClass did not find required class &#39;io.undertow.websockets.jsr.Bootstrap&#39; (OnClassCondition)
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>是否需要添加配置项信息</p>
+<ul>
+<li>参照文档修改配置项信息<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.core">https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.core</a></li>
+<li>自己分析</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改springboot的banner"><a href="#修改springboot的banner" class="headerlink" title="修改springboot的banner"></a>修改springboot的banner</h3><p>在线生成banner</p>
+<p><a target="_blank" rel="noopener" href="https://www.bootschool.net/ascii-art">https://www.bootschool.net/ascii-art</a></p>
+<p>在springboot中，我们在resources目录下添加一个banner.txt文件即可，将样式复制到txt文件中，这里推荐一个地址，在线生成样式<br><a target="_blank" rel="noopener" href="http://patorjk.com/software/taag/#p=display&amp;f=Graffiti&amp;t=Type">http://patorjk.com/software/taag/#p=display&amp;f=Graffiti&amp;t=Type</a> Something<br>————————————————<br>可是第一次总是没有生效：原因是必须叫banner.txt才有用</p>
+<p>有图标才算被springboot识别</p>
+<p><img src="/2021/10/14/springboot/image-20211015141006368.png" alt="image-20211015141006368"></p>
+<p><img src="/2021/10/14/springboot/image-20211015141105261.png" alt="image-20211015141105261"></p>
+<h3 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>@Data生成字段的set和get方法</p>
+<p><img src="/2021/10/14/springboot/image-20211015142836581.png" alt="image-20211015142836581"></p>
+<p>@AllArgsConstructor  有参构造</p>
+<p>加上去无参就没有</p>
+<p>@NoArgsConstructor  无参构造</p>
+<p>@ToString</p>
+<p>lombok提供了一个日志注解@Slf4j</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Slf4j</span>
+<span class="token annotation punctuation">@RestController</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    Car car<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> String <span class="token function">hande01</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> String name<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"请求进来了。。。。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"hello springboot"</span><span class="token operator">+</span><span class="token string">"你好"</span><span class="token operator">+</span>name<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+<p><img src="/2021/10/14/springboot/image-20211015144119377.png" alt="image-20211015144119377"></p>
+<h3 id="Developer-Tools"><a href="#Developer-Tools" class="headerlink" title="Developer Tools"></a>Developer Tools</h3><p>DevTools 的主要作用是减少重启的时间，它并不是真正的热加载技术（比如：<a target="_blank" rel="noopener" href="https://jrebel.com/software/jrebel/">JRebel</a>)。</p>
+<ul>
+<li>在 Eclipse 中，当保存文件时会触发自动重启。</li>
+<li>在 IEDA 中，则是在编译时触发（【Build】–&gt;【Build Project】，快捷键 Ctrl + F9）。java后端修改后无效</li>
+</ul>
+<p>Ctrl + F9 重新编译一下静态资源页面</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-devtools<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<h3 id="spring-initalizr"><a href="#spring-initalizr" class="headerlink" title="spring initalizr"></a>spring initalizr</h3><p>以后创建springboot项目统一用这个项目初始化向导完成创建</p>
 
                 
             </div>
