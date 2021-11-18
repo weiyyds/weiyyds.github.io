@@ -471,10 +471,10 @@ https://www.yuque.com/atguigu/springboot
 <p>全局配置maven</p>
 <pre class=" language-bash"><code class="language-bash">https://blog.csdn.net/qq_39512532/article/details/117266940
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211007193814682.png" alt="image-20211007193814682"></p>
-<p><img src="/2021/10/14/springboot/image-20211007193936985.png" alt="image-20211007193936985"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007193814682.png" alt="image-20211007193814682"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007193936985.png" alt="image-20211007193936985"></p>
 <p>mvn -v</p>
-<p><img src="/2021/10/14/springboot/image-20211007194143543.png" alt="image-20211007194143543"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007194143543.png" alt="image-20211007194143543"></p>
 <pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirrors</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mirror</span><span class="token punctuation">></span></span> 
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>id</span><span class="token punctuation">></span></span>alimaven<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>id</span><span class="token punctuation">></span></span> 
@@ -498,10 +498,10 @@ https://www.yuque.com/atguigu/springboot
 </code></pre>
 <p>创建一个maven项目</p>
 <p>修改maven的指定地址</p>
-<p><img src="/2021/10/14/springboot/image-20211007195418950.png" alt="image-20211007195418950"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007195418950.png" alt="image-20211007195418950"></p>
 <p>起步：</p>
 <p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.first-application.pom">https://docs.spring.io/spring-boot/docs/current/reference/html/getting-started.html#getting-started.first-application.pom</a></p>
-<p><img src="/2021/10/14/springboot/image-20211007200257870.png" alt="image-20211007200257870"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007200257870.png" alt="image-20211007200257870"></p>
 <pre class=" language-xml"><code class="language-xml">引入父工程
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
@@ -542,10 +542,10 @@ https://www.yuque.com/atguigu/springboot
 </code></pre>
 <p>运行主入口的类</p>
 <p><a target="_blank" rel="noopener" href="http://localhost:8080/hello">http://localhost:8080/hello</a></p>
-<p><img src="/2021/10/14/springboot/image-20211007210141889.png" alt="image-20211007210141889"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007210141889.png" alt="image-20211007210141889"></p>
 <p>修改服务器tomcat端口</p>
 <p>配置信息：<a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.server">https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.server</a></p>
-<p><img src="/2021/10/14/springboot/image-20211007210702101.png" alt="image-20211007210702101"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007210702101.png" alt="image-20211007210702101"></p>
 <p>添加插件，创建一个可执行的jar包</p>
 <p>pom.xml</p>
 <pre class=" language-xml"><code class="language-xml"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>build</span><span class="token punctuation">></span></span>
@@ -558,11 +558,11 @@ https://www.yuque.com/atguigu/springboot
  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>build</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>按ctrl多选</p>
-<p><img src="/2021/10/14/springboot/image-20211007211751648.png" alt="image-20211007211751648"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007211751648.png" alt="image-20211007211751648"></p>
 <p>在target目录下就生成jar包</p>
 <p>进入target目录cmd命令</p>
 <p>输入java  -jar springboot01-1.0-SNAPSHOT.jar</p>
-<p><img src="/2021/10/14/springboot/image-20211007212951516.png" alt="image-20211007212951516"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211007212951516.png" alt="image-20211007212951516"></p>
 <h3 id="父级项目的依赖"><a href="#父级项目的依赖" class="headerlink" title="父级项目的依赖"></a>父级项目的依赖</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
@@ -578,7 +578,7 @@ https://www.yuque.com/atguigu/springboot
 </code></pre>
 <p>如果需要修改mysql版本</p>
 <p>查看mysql版本，登录上mysql，输入select version();</p>
-<p><img src="/2021/10/14/springboot/image-20211008110436775.png" alt="image-20211008110436775"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211008110436775.png" alt="image-20211008110436775"></p>
 <p>我这里是mysql5.7.26，而默认的版本是8.0.26</p>
 <p>maven仓库里面只有5.1的</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>
@@ -589,7 +589,7 @@ https://www.yuque.com/atguigu/springboot
 spring-boot-xx允许的场景
 https://docs.spring.io/spring-boot/docs/current/reference/html/using.html<span class="token comment" spellcheck="true">#using.build-systems.starters</span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211008112455746.png" alt="image-20211008112455746"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211008112455746.png" alt="image-20211008112455746"></p>
 <h3 id="了解自动装配原理"><a href="#了解自动装配原理" class="headerlink" title="了解自动装配原理"></a>了解自动装配原理</h3><ul>
 <li><p>自动配好了springmvc</p>
 <ul>
@@ -631,7 +631,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using.html<span c
 </code></pre>
 <h3 id="Conditional"><a href="#Conditional" class="headerlink" title="@Conditional"></a>@Conditional</h3><p>条件装配，满足Condition指定的条件，则进行组件注入</p>
 <p>ctrl+H 打开继承树</p>
-<p><img src="/2021/10/14/springboot/image-20211009100822602.png" alt="image-20211009100822602"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211009100822602.png" alt="image-20211009100822602"></p>
 <h3 id="ImportResource"><a href="#ImportResource" class="headerlink" title="@ImportResource"></a>@ImportResource</h3><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@ImportResource</span><span class="token punctuation">(</span><span class="token string">"classpath:beans.xml"</span><span class="token punctuation">)</span>
 </code></pre>
 <p>准备一个beans.xml文件，这是ioc容器,但是springboot不知道这是容器，在配置类MyConfig上加上ImportResource注解，引入xml文件</p>
@@ -654,7 +654,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using.html<span c
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"haha"</span><span class="token operator">+</span>haha<span class="token punctuation">)</span><span class="token punctuation">;</span>
         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hehe"</span><span class="token operator">+</span>hehe<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211009105013535.png" alt="image-20211009105013535"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211009105013535.png" alt="image-20211009105013535"></p>
 <h3 id="配置文件绑定"><a href="#配置文件绑定" class="headerlink" title="配置文件绑定"></a>配置文件绑定</h3><p>方式一：实体类上加</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
 <span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix<span class="token operator">=</span><span class="token string">"mycar"</span><span class="token punctuation">)</span>
@@ -714,7 +714,7 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using.html<span c
         <span class="token keyword">return</span> car<span class="token punctuation">;</span>
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211009111740036.png" alt="image-20211009111740036"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211009111740036.png" alt="image-20211009111740036"></p>
 <p>方式二：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 实体类加</span>
 @ConfigurationProperties<span class="token punctuation">(</span>prefix<span class="token operator">=</span><span class="token string">"mycar"</span><span class="token punctuation">)</span>
@@ -766,9 +766,9 @@ getAutoConfigurationEntry里面有一个获取候选配置方法
 Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>String<span class="token operator">>></span> <span class="token function">loadSpringFactories</span><span class="token punctuation">(</span>ClassLoader classLoader<span class="token punctuation">)</span>
     classLoader<span class="token punctuation">.</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token string">"META-INF/spring.factories"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211014152946372.png" alt="image-20211014152946372"></p>
-<p><img src="/2021/10/14/springboot/image-20211014153449056.png" alt="image-20211014153449056"></p>
-<p><img src="/2021/10/14/springboot/image-20211014154956725.png" alt="image-20211014154956725"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211014152946372.png" alt="image-20211014152946372"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211014153449056.png" alt="image-20211014153449056"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211014154956725.png" alt="image-20211014154956725"></p>
 <h3 id="按需开启自动配置项"><a href="#按需开启自动配置项" class="headerlink" title="按需开启自动配置项"></a>按需开启自动配置项</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 虽然我们127个场景的自动配置项启动的时候默认全部加载进容器中</span>
 <span class="token comment" spellcheck="true"># 最终会按需配置生效  依据条件装配规则生效</span>
 </code></pre>
@@ -831,15 +831,15 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <p><a target="_blank" rel="noopener" href="https://www.bootschool.net/ascii-art">https://www.bootschool.net/ascii-art</a></p>
 <p>在springboot中，我们在resources目录下添加一个banner.txt文件即可，将样式复制到txt文件中，这里推荐一个地址，在线生成样式<br><a target="_blank" rel="noopener" href="http://patorjk.com/software/taag/#p=display&amp;f=Graffiti&amp;t=Type">http://patorjk.com/software/taag/#p=display&amp;f=Graffiti&amp;t=Type</a> Something<br>————————————————<br>可是第一次总是没有生效：原因是必须叫banner.txt才有用</p>
 <p>有图标才算被springboot识别</p>
-<p><img src="/2021/10/14/springboot/image-20211015141006368.png" alt="image-20211015141006368"></p>
-<p><img src="/2021/10/14/springboot/image-20211015141105261.png" alt="image-20211015141105261"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211015141006368.png" alt="image-20211015141006368"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211015141105261.png" alt="image-20211015141105261"></p>
 <h3 id="lombok"><a href="#lombok" class="headerlink" title="lombok"></a>lombok</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
             <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>@Data生成字段的set和get方法</p>
-<p><img src="/2021/10/14/springboot/image-20211015142836581.png" alt="image-20211015142836581"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211015142836581.png" alt="image-20211015142836581"></p>
 <p>@AllArgsConstructor  有参构造</p>
 <p>加上去无参就没有</p>
 <p>@NoArgsConstructor  无参构造</p>
@@ -857,7 +857,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211015144119377.png" alt="image-20211015144119377"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211015144119377.png" alt="image-20211015144119377"></p>
 <h3 id="Developer-Tools"><a href="#Developer-Tools" class="headerlink" title="Developer Tools"></a>Developer Tools</h3><p>DevTools 的主要作用是减少重启的时间，它并不是真正的热加载技术（比如：<a target="_blank" rel="noopener" href="https://jrebel.com/software/jrebel/">JRebel</a>)。</p>
 <ul>
 <li>在 Eclipse 中，当保存文件时会触发自动重启。</li>
@@ -988,10 +988,10 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
     <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211016104710869.png" alt="image-20211016104710869"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211016104710869.png" alt="image-20211016104710869"></p>
 <h3 id="yaml中使用自定义的类配置文件中没有提示"><a href="#yaml中使用自定义的类配置文件中没有提示" class="headerlink" title="yaml中使用自定义的类配置文件中没有提示"></a>yaml中使用自定义的类配置文件中没有提示</h3><p>需要使用一个注解</p>
 <p>引入依赖包，然后重新运行项目，再写时就会提示了</p>
-<p><img src="/2021/10/14/springboot/image-20211016162502561.png" alt="image-20211016162502561"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211016162502561.png" alt="image-20211016162502561"></p>
 <pre class=" language-bash"><code class="language-bash">https://docs.spring.io/spring-boot/docs/current/reference/html/configuration-metadata.html<span class="token comment" spellcheck="true">#configuration-metadata.manual-hints.value-providers.spring-bean-reference</span>
 </code></pre>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
@@ -1039,15 +1039,15 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <p>2.把这个xml文件复制到c盘的C:\Users\admin.m2文件下</p>
 <p>3.修改maven的默认版本：默认maven3</p>
 <p>​      修改为3.5.4,下次新建项目的时候默认就是3.5.4</p>
-<p><img src="/2021/10/14/springboot/image-20211016215347239.png" alt="image-20211016215347239"></p>
-<p><img src="/2021/10/14/springboot/image-20211016215503309.png" alt="image-20211016215503309"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118144833368.png" alt="image-20211118144833368"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118144908594.png" alt="image-20211118144908594"></p>
 <p>修改成功</p>
-<p><img src="/2021/10/14/springboot/image-20211016220256534.png" alt="image-20211016220256534"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211016220256534.png" alt="image-20211016220256534"></p>
 <h3 id="简单功能分析"><a href="#简单功能分析" class="headerlink" title="简单功能分析"></a>简单功能分析</h3><p><a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.developing-web-applications.spring-mvc">https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.developing-web-applications.spring-mvc</a></p>
 <p>2.1静态资源访问</p>
 <p> 类路径下(resources)有     /static<code>(or</code>/public<code>or</code>/resources<code>or</code>/META-INF/resources 静态资源存放到这些目录下就能直接访问</p>
 <p>​       It uses the <code>ResourceHttpRequestHandler</code></p>
-<p><img src="/2021/10/14/springboot/image-20211016223602006.png" alt="image-20211016223602006"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211016223602006.png" alt="image-20211016223602006"></p>
 <p>原理：</p>
 <p>静态资源映射/**</p>
 <p>请求进来，先去controller看看能不能处理，如果不能处理才移交给静态资源处理</p>
@@ -1105,7 +1105,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <h3 id="给网站一个网站图标"><a href="#给网站一个网站图标" class="headerlink" title="给网站一个网站图标"></a>给网站一个网站图标</h3><p>将图标放在静态资源目录下，就会自动成为网站的图标</p>
 <p>图标名称必须是favicon.ico</p>
 <p>然后访问即可，第一次访问会无效，关闭浏览器重新访问即可，因为第一次Session会话未结束，导致不生效</p>
-<p><img src="/2021/10/14/springboot/image-20211017150223666.png" alt="image-20211017150223666"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211017150223666.png" alt="image-20211017150223666"></p>
 <h3 id="静态资源配置原理"><a href="#静态资源配置原理" class="headerlink" title="静态资源配置原理"></a>静态资源配置原理</h3><ul>
 <li><p>Springboot项目启动默认加载xxxautoConfiguration类</p>
 </li>
@@ -1220,9 +1220,9 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
       <span class="token key atrule">filter</span><span class="token punctuation">:</span>
         <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211018102451015.png" alt="image-20211018102451015"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211018102451015.png" alt="image-20211018102451015"></p>
 <h3 id="Rest风格使用客户端工具"><a href="#Rest风格使用客户端工具" class="headerlink" title="Rest风格使用客户端工具"></a>Rest风格使用客户端工具</h3><p>如postman直接发put,delete/patch等方式请求，不会过Filter</p>
-<p><img src="/2021/10/14/springboot/image-20211018105410553.png" alt="image-20211018105410553"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211018105410553.png" alt="image-20211018105410553"></p>
 <h3 id="请求映射原理"><a href="#请求映射原理" class="headerlink" title="请求映射原理"></a>请求映射原理</h3><p>所有请求经过DispatcherServlet </p>
 <p>spring-webmvc-5.3.10.jar!\org\springframework\web\servlet\DispatcherServlet.class</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#DispatcherServlet extends FrameworkServlet </span>
@@ -1258,11 +1258,11 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 </code></pre>
 <p><a target="_blank" rel="noopener" href="http://localhost:8080/user%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82this.getHandler(processedRequest)">http://localhost:8080/user发送请求this.getHandler(processedRequest)</a>;</p>
 <p>找到当前请求使用哪个Handler (controller) 进行处理</p>
-<p><img src="/2021/10/14/springboot/image-20211018155003978.png" alt="image-20211018155003978"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211018155003978.png" alt="image-20211018155003978"></p>
 <p>进入getHandler方法</p>
 <p>if (this.handlerMappings != null) {}</p>
 <p>handlerMappings处理器映射 有5个</p>
-<p><img src="/2021/10/14/springboot/image-20211018155234906.png" alt="image-20211018155234906"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211018155234906.png" alt="image-20211018155234906"></p>
 <p>RequestMapperHandlerMappering:  保存了所有@RequestMappering和handler的映射规则</p>
 <pre class=" language-java"><code class="language-java"> <span class="token keyword">protected</span> HandlerExecutionChain <span class="token function">getHandler</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handlerMappings <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -1277,7 +1277,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
             <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
         <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211018160637005.png" alt="image-20211018160637005"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211018160637005.png" alt="image-20211018160637005"></p>
 <p>所有的请求映射都在HadelMappering</p>
 <p>springboot 自动配置了欢迎页的welcomHandleMappering</p>
 <h3 id="RestFul风格请求"><a href="#RestFul风格请求" class="headerlink" title="RestFul风格请求"></a>RestFul风格请求</h3><pre class=" language-html"><code class="language-html">测试基本注解
@@ -1380,7 +1380,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>compile<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 </code></pre>
-<p><img src="/2021/10/14/springboot/image-20211025153447540.png" alt="image-20211025153447540"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211025153447540.png" alt="image-20211025153447540"></p>
 <p>@ResponseBody给前端自动返回json数据</p>
 
                 
