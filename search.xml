@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2021/11/18/typora-picgo-github/"/>
+      <url>/2021/11/18/typora-picgo-github/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Typora-Picgo-github"><a href="#Typora-Picgo-github" class="headerlink" title="Typora+Picgo+github"></a>Typora+Picgo+github</h3><p>编写文档利器</p><p>Typora提取：</p><p>链接：<a href="https://pan.baidu.com/s/11NSLF5fqeo6PjZWyB-ykZA">https://pan.baidu.com/s/11NSLF5fqeo6PjZWyB-ykZA</a><br>提取码：g70q</p><p>Picgo提取</p><p>链接：<a href="https://pan.baidu.com/s/1bk-0lPOsNvhGpp7BFsMbRw">https://pan.baidu.com/s/1bk-0lPOsNvhGpp7BFsMbRw</a><br>提取码：yf20</p><p>1.点击picgo安装，我选择下面的仅为我安装</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118154053961.png" alt="image-20211118154053961"></p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118154152802.png" alt="image-20211118154152802"></p><p>点击完成</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118154238802.png" alt="image-20211118154238802"></p><p>因为我们这里使用github来作为图床设置</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118154558512.png" alt="image-20211118154558512"></p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118154700836.png" alt="image-20211118154700836"></p><p>在github新建一个仓库</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118155028840.png" alt="image-20211118155028840"></p><p>填写配置信息</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118155236869.png" alt="image-20211118155236869"></p><p>生成token令牌</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118155354859.png" alt="image-20211118155354859"></p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118155410945.png" alt="image-20211118155410945"></p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118155601150.png" alt="image-20211118155601150"></p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118155746332.png" alt="image-20211118155746332"></p><p>划到下面点击生成令牌</p><p>复制这串号码，就是token</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118155856048.png" alt="image-20211118155856048"></p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118160000033.png" alt="image-20211118160000033"></p><p>指定存储的路径可以为空</p><p>设定自定义域名：</p><p>由于github网站在美国，访问较慢，所以使用cdn加速，这个cdn是免费的</p><p><a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E4%BB%93%E5%BA%93%E5%90%8D">https://cdn.jsdelivr.net/gh/用户名/仓库名</a></p><p>例如：<a href="https://cdn.jsdelivr.net/gh/weiyyds/Image">https://cdn.jsdelivr.net/gh/weiyyds/Image</a></p><h3 id="测试是否上传成功："><a href="#测试是否上传成功：" class="headerlink" title="测试是否上传成功："></a>测试是否上传成功：</h3><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118160422959.png" alt="image-20211118160422959"></p><h3 id="下一步把picgo结合上typora"><a href="#下一步把picgo结合上typora" class="headerlink" title="下一步把picgo结合上typora"></a>下一步把picgo结合上typora</h3><p>打开typora里面的文件=》偏好设置</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118161100983.png" alt="image-20211118161100983"></p><p>随便截取一张图片测试：</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118161205274.png" alt="image-20211118161205274"></p><p>路径成功了：是网络路径</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118161311409.png" alt="image-20211118161311409"></p><p>注意点：把另一份笔记中的图片复制过来，会有可能报错，无法上传图片</p><p>=== 这里选择复制，不能是复制图片==</p><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211118161542719.png" alt="image-20211118161542719"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>uni-app</title>
       <link href="/2021/11/18/uni-app-xue-xi/"/>
       <url>/2021/11/18/uni-app-xue-xi/</url>
