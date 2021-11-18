@@ -516,47 +516,47 @@
 <ul>
 <li>vue组件中，在style标签上加上属性”&lt;style lang=’scss’”&gt;即可</li>
 </ul>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="content">
-        <view class="rpx">rpx</view>
-        <view class="vw">vw</view>
-        <view class="sass">sass</view>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rpx<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>rpx<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vw<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>vw<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sass<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>sass<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-    export default &#123;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
-        &#125;
-</script>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style lang="scss">
-    .rpx&#123;
-        /**rpx 小程序中的单位 750rpx = 屏幕的宽度 */
-        width: 750rpx;
-        height: 100rpx;
-        background-color: aqua;
-    &#125;
-    .vw&#123;
-        /*** vw h5 的单位 100vw =屏幕的宽度 100vh=屏幕的高度*/
-        width: 50vw;
-        height: 100px;
-        background-color: tan;
-    &#125;
-    .content&#123;
-        .sass&#123;
-            background-color: red;
-            color: $uni-color-success;
-        &#125;
-    &#125;
-</style>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token number">.</span>rpx&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/**rpx 小程序中的单位 750rpx = 屏幕的宽度 */</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">750</span>rpx<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>rpx<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> aqua<span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    <span class="token number">.</span>vw&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/*** vw h5 的单位 100vw =屏幕的宽度 100vh=屏幕的高度*/</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">50</span>vw<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> tan<span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    <span class="token number">.</span>content&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token number">.</span>sass&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+            <span class="token property">color</span><span class="token punctuation">:</span> $uni-color-success<span class="token punctuation">;</span>
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>安装依赖后重新打包就报错，原因是sass版本太高</p>
 <p>TypeError: this.getOptions is not a function</p>
 <p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20210912212322127.png" alt="image-20210912212322127"></p>
 <p>解决步骤</p>
 <p>npm uninstall sass-loader</p>
-<p>npm install <a href="mailto:&#x73;&#x61;&#115;&#x73;&#x2d;&#x6c;&#x6f;&#x61;&#x64;&#x65;&#114;&#64;&#53;&#x2e;&#48;&#x2e;&#48;">&#x73;&#x61;&#115;&#x73;&#x2d;&#x6c;&#x6f;&#x61;&#x64;&#x65;&#114;&#64;&#53;&#x2e;&#48;&#x2e;&#48;</a></p>
+<p>npm install <a href="mailto:&#x73;&#97;&#x73;&#115;&#45;&#x6c;&#x6f;&#97;&#100;&#101;&#114;&#x40;&#x35;&#46;&#x30;&#46;&#48;">&#x73;&#97;&#x73;&#115;&#45;&#x6c;&#x6f;&#97;&#100;&#101;&#114;&#x40;&#x35;&#46;&#x30;&#46;&#48;</a></p>
 <h3 id="安装微信小程序插件———–vscode"><a href="#安装微信小程序插件———–vscode" class="headerlink" title="安装微信小程序插件———–vscode"></a>安装微信小程序插件———–vscode</h3><p>vscode wxml</p>
 <blockquote>
 <p>在wxml文件中输入&lt;view回车自动补全</p>
@@ -576,31 +576,31 @@
 <ul>
 <li>数据的展示</li>
 </ul>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="content">
-        <!-- 使用数据 -->
-        <view>&#123;&#123;msg&#125;&#125;</view>
-        <!-- 在标签上的属性通过:data-index="数据变量" -->
-        <view :data-color="color">颜色</view>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 使用数据 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span><span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span>msg<span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 在标签上的属性通过:data-index="数据变量" --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">:data-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>color<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>颜色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-    export default &#123;
-        // 1.定义数据
-        data()&#123;
-            return&#123;
-                //存放数据
-                msg:"黑马程序员-001",
-                color:"blue"
-            &#125;
-        &#125;
-        &#125;
-</script>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 1.定义数据</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//存放数据</span>
+                msg<span class="token punctuation">:</span><span class="token string">"黑马程序员-001"</span><span class="token punctuation">,</span>
+                color<span class="token punctuation">:</span><span class="token string">"blue"</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style lang="scss">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
     
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <ul>
 <li>数据的循环</li>
@@ -675,54 +675,54 @@ text:<span class="token string">'樱桃'</span>
 <li>定义事件监听函数，需要在methods中定义</li>
 <li>事件的传参</li>
 </ul>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="content">
-        <!-- 1.给view标签绑定点击事件 -->
-        <view @click="handleClick">点击我试试</view>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 1.给view标签绑定点击事件 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>点击我试试<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-    export default &#123;
-        //2.在methods里面来定义事件
-        methods:&#123;
-            handleClick()&#123;
-                console.log("我不想努力了！");
-            &#125;
-        &#125;
-&#125;
-</script>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//2.在methods里面来定义事件</span>
+        methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"我不想努力了！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style lang="scss">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
     
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>事件的传参</p>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="content">
-        <!-- 1.给view标签绑定点击事件 -->
-        <view data-index="11" @click="handleClick(1,$event)">点击我试试1</view>
-        <view data-index="22" @click="handleClick(2,$event)">点击我试试2</view>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 1.给view标签绑定点击事件 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">data-index</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>11<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick(1,$event)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>点击我试试1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">data-index</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>22<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick(2,$event)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>点击我试试2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-    export default &#123;
-        //2.在methods里面来定义事件
-        methods:&#123;
-            handleClick(index,event)&#123;
-                // console.log("我不想努力了！");
-                console.log(index);
-                console.log(event);
-                console.log(event.currentTarget.dataset.index);
-            &#125;
-        &#125;
-&#125;
-</script>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//2.在methods里面来定义事件</span>
+        methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token function">handleClick</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span>event<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">// console.log("我不想努力了！");</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>currentTarget<span class="token punctuation">.</span>dataset<span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style lang="scss">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
     
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <h3 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h3><ul>
 <li>组件的简单使用<ul>
@@ -733,45 +733,45 @@ text:<span class="token string">'樱桃'</span>
 </ul>
 </li>
 </ul>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <image src="https://img0.baidu.com/it/u=358101652,629366036&fm=26&fmt=auto"></image>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://img0.baidu.com/it/u<span class="token punctuation">=</span>358101652,629366036&amp;fm<span class="token punctuation">=</span>26&amp;fmt<span class="token punctuation">=</span>auto<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-export default &#123;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
-&#125;
-</script>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
 
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <ul>
 <li>组件的引入</li>
 </ul>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="content">
-        <!-- 4使用组件 -->
-        <img-border></img-border>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 4使用组件 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img-border</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>img-border</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-//2.引入自定义组件
-import imgBorder from '../../components/img-border.vue'
-    export default &#123;
-    //3注册组件
-    components:&#123;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token comment" spellcheck="true">//2.引入自定义组件</span>
+<span class="token keyword">import</span> imgBorder <span class="token keyword">from</span> <span class="token string">'../../components/img-border.vue'</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//3注册组件</span>
+    components<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         imgBorder
 
-    &#125;
-&#125;
-</script>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style lang="scss">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
 
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <ul>
 <li><p>组件的注册</p>
@@ -791,56 +791,56 @@ import imgBorder from '../../components/img-border.vue'
 <li>父向子传递参数，通过属性的方式</li>
 </ul>
 <p>父组件</p>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="content">
-        <!-- 4使用组件 -->
-        <img-border :mysrc="src1"></img-border>
-        <img-border :mysrc="src2"></img-border>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 4使用组件 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img-border</span> <span class="token attr-name">:mysrc</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>src1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>img-border</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img-border</span> <span class="token attr-name">:mysrc</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>src2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>img-border</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-//2.引入自定义组件
-import imgBorder from '../../components/img-border.vue'
-    export default &#123;
-        data()&#123;
-            return&#123;
-                src1:"https://img0.baidu.com/it/u=1429721905,3344592914&fm=26&fmt=auto",
-                src2:"https://img1.baidu.com/it/u=1378113327,3649590787&fm=26&fmt=auto"
-            &#125;
-        &#125;,
-    //3注册组件
-    components:&#123;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token comment" spellcheck="true">//2.引入自定义组件</span>
+<span class="token keyword">import</span> imgBorder <span class="token keyword">from</span> <span class="token string">'../../components/img-border.vue'</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                src1<span class="token punctuation">:</span><span class="token string">"https://img0.baidu.com/it/u=1429721905,3344592914&amp;fm=26&amp;fmt=auto"</span><span class="token punctuation">,</span>
+                src2<span class="token punctuation">:</span><span class="token string">"https://img1.baidu.com/it/u=1378113327,3649590787&amp;fm=26&amp;fmt=auto"</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">//3注册组件</span>
+    components<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         imgBorder
 
-    &#125;
-&#125;
-</script>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style lang="scss">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
 
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>子组件</p>
-<pre class=" language-vue"><code class="language-vue"><template>
-<!-- 把props中的mysrc看成是data中的变量一样来使用即可 -->
-    <image  class="img-border" :src="mysrc"></image>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!-- 把props中的mysrc看成是data中的变量一样来使用即可 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>img-border<span class="token punctuation">"</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mysrc<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-export default &#123;
-    //声明一下要接收的 父组件传递过来的参数
-    props:&#123;
-        mysrc:String
-    &#125;
-&#125;
-</script>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//声明一下要接收的 父组件传递过来的参数</span>
+    props<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        mysrc<span class="token punctuation">:</span>String
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style>
-    .img-border&#123;
-        border-radius: 50%;
-    &#125;
-</style>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token number">.</span>img-border&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <ul>
 <li>子向父传递参数，通过触发事件的方式<ul>
@@ -848,77 +848,77 @@ export default &#123;
 </ul>
 </li>
 </ul>
-<pre class=" language-vue"><code class="language-vue"><template>
-<!-- 把props中的mysrc看成是data中的变量一样来使用即可 -->
-    <image @click="handleClick"  class="img-border" :src="mysrc"></image>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!-- 把props中的mysrc看成是data中的变量一样来使用即可 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClick<span class="token punctuation">"</span></span>  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>img-border<span class="token punctuation">"</span></span> <span class="token attr-name">:src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mysrc<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-export default &#123;
-    //声明一下要接收的 父组件传递过来的参数
-    props:&#123;
-        mysrc:String
-    &#125;,
-    methods:&#123;
-        handleClick()&#123;
-           // console.log("图片点击成功");
-           //子向父传递参数，通过触发事件
-           // this.$emit("自定义的函数","要传递的参数");
-           //console.log(this.mysrc);
-            this.$emit("srcChange",this.mysrc);
-        &#125;
-    &#125;
-&#125;
-</script>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//声明一下要接收的 父组件传递过来的参数</span>
+    props<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        mysrc<span class="token punctuation">:</span>String
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+           <span class="token comment" spellcheck="true">// console.log("图片点击成功");</span>
+           <span class="token comment" spellcheck="true">//子向父传递参数，通过触发事件</span>
+           <span class="token comment" spellcheck="true">// this.$emit("自定义的函数","要传递的参数");</span>
+           <span class="token comment" spellcheck="true">//console.log(this.mysrc);</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">"srcChange"</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>mysrc<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style>
-    .img-border&#123;
-        border-radius: 50%;
-    &#125;
-</style>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token number">.</span>img-border&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+    &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <ul>
 <li>父组件通过监听事件的方式接收数据</li>
 </ul>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="content">
-        <view>
-            子组件传递过来的路径:&#123;&#123;src&#125;&#125;
-        </view>
-        <!-- 4使用组件 -->
-        <img-border @srcChange="handleSrcChange" :mysrc="src1"></img-border>
-        <img-border  @srcChange="handleSrcChange" :mysrc="src2"></img-border>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
+            子组件传递过来的路径:<span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span>src<span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- 4使用组件 --></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img-border</span> <span class="token attr-name">@srcChange</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleSrcChange<span class="token punctuation">"</span></span> <span class="token attr-name">:mysrc</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>src1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>img-border</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img-border</span>  <span class="token attr-name">@srcChange</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleSrcChange<span class="token punctuation">"</span></span> <span class="token attr-name">:mysrc</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>src2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>img-border</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-//2.引入自定义组件
-import imgBorder from '../../components/img-border.vue'
-    export default &#123;
-        data()&#123;
-            return&#123;
-                src:"",
-                src1:"https://img0.baidu.com/it/u=1429721905,3344592914&fm=26&fmt=auto",
-                src2:"https://img1.baidu.com/it/u=1378113327,3649590787&fm=26&fmt=auto"
-            &#125;
-        &#125;,
-    //3注册组件
-    components:&#123;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token comment" spellcheck="true">//2.引入自定义组件</span>
+<span class="token keyword">import</span> imgBorder <span class="token keyword">from</span> <span class="token string">'../../components/img-border.vue'</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                src<span class="token punctuation">:</span><span class="token string">""</span><span class="token punctuation">,</span>
+                src1<span class="token punctuation">:</span><span class="token string">"https://img0.baidu.com/it/u=1429721905,3344592914&amp;fm=26&amp;fmt=auto"</span><span class="token punctuation">,</span>
+                src2<span class="token punctuation">:</span><span class="token string">"https://img1.baidu.com/it/u=1378113327,3649590787&amp;fm=26&amp;fmt=auto"</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">//3注册组件</span>
+    components<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         imgBorder
-    &#125;,
-    methods:&#123;
-        handleSrcChange(e)&#123;
-            //console.log("父组件的自定义事件被触发了");
-            console.log(e);
-            this.src=e
-        &#125;
-    &#125;
-&#125;
-</script>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">handleSrcChange</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//console.log("父组件的自定义事件被触发了");</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>src<span class="token operator">=</span>e
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style lang="scss">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
 
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <ul>
 <li>使用全局数据传递参数<ul>
@@ -953,48 +953,48 @@ Vue<span class="token punctuation">.</span>prototype<span class="token punctuati
 <li>通过solt来实现占位符</li>
 </ul>
 <p>子组件</p>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="form">
-        <view class="form-title">标题</view>
-        <view class="form_content">
-            <slot></slot>
-        </view>
-    </view>
-</template>
-<script>
-    export default&#123;
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form-title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>标题<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>form_content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>slot</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>slot</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">export</span> <span class="token keyword">default</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
-    &#125;
-</script>
-<style>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
 
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <p>父组件</p>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view class="content">
-        <my-form>
-            <view>
-                <input type="text">
-                <radio></radio>
-                <checkbox></checkbox>
-            </view>
-        </my-form>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>my-form</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>radio</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>radio</span><span class="token punctuation">></span></span>
+                <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>checkbox</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>checkbox</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>my-form</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-import myForm from "../../components/my-form.vue"
-    export default &#123;
-        components:&#123;
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token keyword">import</span> myForm <span class="token keyword">from</span> <span class="token string">"../../components/my-form.vue"</span>
+    <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        components<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
             myForm
-        &#125;
-&#125;
-</script>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style lang="scss">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>scss<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
 
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ul>
 <li>uniapp框架的生命周期整合了vue和微信小程序的生命周期</li>
@@ -1005,7 +1005,7 @@ import myForm from "../../components/my-form.vue"
 <h3 id="开始实战，懂你找图小程序"><a href="#开始实战，懂你找图小程序" class="headerlink" title="开始实战，懂你找图小程序"></a>开始实战，懂你找图小程序</h3><p>创建项目</p>
 <p>vue create -p dcloudio/uni-preset-vue dnipicture</p>
 <p>安装sass依赖</p>
-<p>npm install <a href="mailto:&#x73;&#97;&#x73;&#x73;&#45;&#x6c;&#111;&#x61;&#x64;&#x65;&#114;&#x40;&#x35;&#x2e;&#48;&#x2e;&#x30;">&#x73;&#97;&#x73;&#x73;&#45;&#x6c;&#111;&#x61;&#x64;&#x65;&#114;&#x40;&#x35;&#x2e;&#48;&#x2e;&#x30;</a></p>
+<p>npm install <a href="mailto:&#x73;&#97;&#x73;&#115;&#45;&#x6c;&#x6f;&#x61;&#100;&#101;&#x72;&#64;&#x35;&#x2e;&#x30;&#46;&#x30;">&#x73;&#97;&#x73;&#115;&#45;&#x6c;&#x6f;&#x61;&#100;&#101;&#x72;&#64;&#x35;&#x2e;&#x30;&#46;&#x30;</a></p>
 <p>输入&lt;d 会自动出现模板</p>
 <h3 id="使用阿里巴巴的iconfont字体图标"><a href="#使用阿里巴巴的iconfont字体图标" class="headerlink" title="使用阿里巴巴的iconfont字体图标"></a>使用阿里巴巴的iconfont字体图标</h3><p>在src目录下新建一个styles文件，里面存放xxx.wxss</p>
 <p>在APP.vue的style标签中引入</p>
@@ -1049,23 +1049,23 @@ import myForm from "../../components/my-form.vue"
 <li>在componts里面注册组件</li>
 <li>使用组件（使用中华线-的形式，，不建议驼峰式）</li>
 </ul>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view>首页
-        <text class="iconfont iconimg-o-copy"></text>
-        <uni-badge text="1"></uni-badge>
-    </view>
-</template>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>首页
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iconfont iconimg-o-copy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uni-badge</span> <span class="token attr-name">text</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>uni-badge</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-import &#123;uniBadge&#125; from '@dcloudio/uni-ui'
-export default &#123;
-    components: &#123;uniBadge&#125;
-&#125;
-</script>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>uniBadge<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">'@dcloudio/uni-ui'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    components<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>uniBadge<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
 
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <h3 id="uin-api"><a href="#uin-api" class="headerlink" title="uin-api"></a>uin-api</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     components<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
@@ -1093,72 +1093,72 @@ export default &#123;
 <p>uni-api中0代表状态码是否成功，成功则为null，1表示数据</p>
 <h3 id="分段器介绍"><a href="#分段器介绍" class="headerlink" title="分段器介绍"></a>分段器介绍</h3><p>分段器指的是uni-ui中的一个组件，其实就是我们俗称的标签栏、tab栏</p>
 <p><a target="_blank" rel="noopener" href="https://ext.dcloud.net.cn/plugin?id=54">https://ext.dcloud.net.cn/plugin?id=54</a></p>
-<pre class=" language-vue"><code class="language-vue"><template>
-    <view>
-        <home-album></home-album>
-        <home-category></home-category>
-        <home-new></home-new>
-        <home-recommend></home-recommend>
-    <!-- 分段器：tab选项卡 -->
-    <view>
-        <uni-segmented-control
-            :current="current"
-            :values="items"
-            @clickItem="onClickItem"
-            style-type="button"
-            active-color="#4cd964"
-            >
-    </uni-segmented-control>
-        <view class="content">
-            <view v-show="current === 0">
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>home-album</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>home-album</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>home-category</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>home-category</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>home-new</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>home-new</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>home-recommend</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>home-recommend</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 分段器：tab选项卡 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>uni-segmented-control</span>
+            <span class="token attr-name">:current</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>current<span class="token punctuation">"</span></span>
+            <span class="token attr-name">:values</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>items<span class="token punctuation">"</span></span>
+            <span class="token attr-name">@clickItem</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>onClickItem<span class="token punctuation">"</span></span>
+            <span class="token attr-name">style-type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span>
+            <span class="token attr-name">active-color</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#4cd964<span class="token punctuation">"</span></span>
+            <span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>uni-segmented-control</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">v-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>current <span class="token punctuation">=</span><span class="token punctuation">=</span><span class="token punctuation">=</span> 0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
                 选项卡1的内容
-            </view>
-            <view v-show="current === 1">
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">v-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>current <span class="token punctuation">=</span><span class="token punctuation">=</span><span class="token punctuation">=</span> 1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
                 选项卡2的内容
-            </view>
-            <view v-show="current === 2">
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>view</span> <span class="token attr-name">v-show</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>current <span class="token punctuation">=</span><span class="token punctuation">=</span><span class="token punctuation">=</span> 2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
                 选项卡3的内容
-            </view>
-        </view>
-    </view>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
 
 
-    </view>
-</template>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>view</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
 
-<script>
-import homeAlbum from "./home-album"
-import homeCategory from "./home-category"
-import homeNew from "./home-new"
-import homeRecommend from "./home-recommend"
-import &#123;uniSegmentedControl&#125; from '@dcloudio/uni-ui'
-export default &#123;
-    components:&#123;
-        homeAlbum,
-        homeCategory,
-        homeNew,
-        homeRecommend,
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+<span class="token keyword">import</span> homeAlbum <span class="token keyword">from</span> <span class="token string">"./home-album"</span>
+<span class="token keyword">import</span> homeCategory <span class="token keyword">from</span> <span class="token string">"./home-category"</span>
+<span class="token keyword">import</span> homeNew <span class="token keyword">from</span> <span class="token string">"./home-new"</span>
+<span class="token keyword">import</span> homeRecommend <span class="token keyword">from</span> <span class="token string">"./home-recommend"</span>
+<span class="token keyword">import</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>uniSegmentedControl<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">from</span> <span class="token string">'@dcloudio/uni-ui'</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    components<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        homeAlbum<span class="token punctuation">,</span>
+        homeCategory<span class="token punctuation">,</span>
+        homeNew<span class="token punctuation">,</span>
+        homeRecommend<span class="token punctuation">,</span>
         uniSegmentedControl
-    &#125;,
-    data()&#123;
-        return &#123;
-            items:['选项卡1','选项卡2','选项卡3'],
-            current:0
-        &#125;
-    &#125;,
-    methods:&#123;
-        onClickItem(e)&#123;
-            if(this.current!==e.currentIndex)&#123;
-                this.current = e.currentIndex;
-            &#125;
-        &#125;
-    &#125;
-&#125;
-</script>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            items<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token string">'选项卡1'</span><span class="token punctuation">,</span><span class="token string">'选项卡2'</span><span class="token punctuation">,</span><span class="token string">'选项卡3'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            current<span class="token punctuation">:</span><span class="token number">0</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">onClickItem</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>current<span class="token operator">!==</span>e<span class="token punctuation">.</span>currentIndex<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>current <span class="token operator">=</span> e<span class="token punctuation">.</span>currentIndex<span class="token punctuation">;</span>
+            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-<style>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
 
-</style>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211117161317414.png" alt="image-20211117161317414"></p>
 <h3 id="封装自己的异步请求"><a href="#封装自己的异步请求" class="headerlink" title="封装自己的异步请求"></a>封装自己的异步请求</h3><p>为什么要自己封装</p>
@@ -1192,7 +1192,7 @@ export default &#123;
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 </code></pre>
 <p>2.在main.js中的组件挂载到vue原型链上</p>
-<pre class=" language-vue"><code class="language-vue">import Vue from 'vue'
+<pre class=" language-html"><code class="language-html">import Vue from 'vue'
 import App from './App'
 App.mpType = 'app'
 Vue.config.productionTip = false
@@ -1202,9 +1202,9 @@ Vue.prototype.request=request
 
 
 
-const app = new Vue(&#123;
+const app = new Vue(<span class="token entity" title="&#123;">&amp;#123;</span>
   ...App
-&#125;)
+<span class="token entity" title="&#125;">&amp;#125;</span>)
 app.$mount()
 </code></pre>
 <p>最后在首页index.vue文件的vue实例中添加onLoad函数</p>
