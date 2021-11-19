@@ -1382,6 +1382,27 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211025153447540.png" alt="image-20211025153447540"></p>
 <p>@ResponseBody给前端自动返回json数据</p>
+<h3 id="返回对象解析成json格式原理"><a href="#返回对象解析成json格式原理" class="headerlink" title="返回对象解析成json格式原理"></a>返回对象解析成json格式原理</h3><p>首先返回值会去遍历handle处理器能够处理</p>
+<p>它RequestResponseBodyMethodProcessor处理@ResponseBody</p>
+<p>进入里面会有各种messageConverters消息转换器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211119104151422.png" alt="image-20211119104151422"></p>
+<p>7.8号转换器mappingJackson2HttpMessagConverter可以吧对象转为json</p>
+<p>再根据浏览器发过来的请求头中的accept 的数据类型</p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211119104519680.png" alt="image-20211119104519680"></p>
+<p>与后端产出的对比循环出最佳类型</p>
+<p>把对象转化为json格式</p>
+<h3 id="返回对象成为xml格式"><a href="#返回对象成为xml格式" class="headerlink" title="返回对象成为xml格式"></a>返回对象成为xml格式</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.fasterxml.jackson.dataformat<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>jackson-dataformat-xml<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>加上@ResponseBody</p>
+<h3 id="基于请求参数的内容协商原理"><a href="#基于请求参数的内容协商原理" class="headerlink" title="基于请求参数的内容协商原理"></a>基于请求参数的内容协商原理</h3><p>浏览器的请求头不方便随意更改，不像postman，所以springmvc提出发送请求携带参数，告诉服务器索要返回的数据格式</p>
+<pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
+    <span class="token key atrule">contentnegotiation</span><span class="token punctuation">:</span>
+      <span class="token key atrule">favor-parameter</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+</code></pre>
+<p><a target="_blank" rel="noopener" href="http://localhost:8080//test/person?format=xml%E6%88%96json">http://localhost:8080//test/person?format=xml或json</a></p>
 
                 
             </div>
@@ -1619,13 +1640,13 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/13/vue/">
+                <a href="/2021/11/13/easyexcel/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="vue">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="easyExcel">
                         
-                        <span class="card-title">vue</span>
+                        <span class="card-title">easyExcel</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
