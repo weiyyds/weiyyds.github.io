@@ -459,9 +459,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.css">
-        
 
         
 
@@ -524,24 +521,24 @@ https://www.yuque.com/atguigu/springboot
  *
  */</span>
 <span class="token annotation punctuation">@SpringBootApplication</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainApplication</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MainApplication</span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//主入口</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         SpringApplication<span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span>MainApplication<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>开始写逻辑层代码</p>
 <p>controller层</p>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//@Controller+@ResponseBody返回浏览器</span>
 <span class="token comment" spellcheck="true">//@RestController==@Controller+@ResponseBody</span>
 <span class="token annotation punctuation">@RestController</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> String <span class="token function">hande01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String <span class="token function">hande01</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token string">"hello springboot"</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>运行主入口的类</p>
 <p><a target="_blank" rel="noopener" href="http://localhost:8080/hello">http://localhost:8080/hello</a></p>
@@ -627,10 +624,10 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using.html<span c
 </li>
 </ul>
 <h3 id="Import注解"><a href="#Import注解" class="headerlink" title="@Import注解"></a>@Import注解</h3><pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
- * @Import(&amp;#123;User.class, DBHelper.class&amp;#125;)
+ * @Import({User.class, DBHelper.class})
  * 导入到容器中会自动调用无参构造创建出实例对象
  */</span>
-<span class="token annotation punctuation">@Import</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>User<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> DBHelper<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@Import</span><span class="token punctuation">(</span><span class="token punctuation">{</span>User<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> DBHelper<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <h3 id="Conditional"><a href="#Conditional" class="headerlink" title="@Conditional"></a>@Conditional</h3><p>条件装配，满足Condition指定的条件，则进行组件注入</p>
 <p>ctrl+H 打开继承树</p>
@@ -672,50 +669,50 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using.html<span c
  */</span>
 <span class="token annotation punctuation">@Component</span>
 <span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix<span class="token operator">=</span><span class="token string">"mycar"</span><span class="token punctuation">)</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Car</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String brand<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//品牌</span>
     <span class="token keyword">private</span> Integer price<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//价格</span>
 
-    <span class="token keyword">public</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">Car</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token function">Car</span><span class="token punctuation">(</span>String brand<span class="token punctuation">,</span> Integer price<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">Car</span><span class="token punctuation">(</span>String brand<span class="token punctuation">,</span> Integer price<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>brand <span class="token operator">=</span> brand<span class="token punctuation">;</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> String <span class="token function">getBrand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String <span class="token function">getBrand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> brand<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBrand</span><span class="token punctuation">(</span>String brand<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBrand</span><span class="token punctuation">(</span>String brand<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>brand <span class="token operator">=</span> brand<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> Integer <span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Integer <span class="token function">getPrice</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> price<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setPrice</span><span class="token punctuation">(</span>Integer price<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setPrice</span><span class="token punctuation">(</span>Integer price<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
     <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token string">"Car&amp;#123;"</span> <span class="token operator">+</span>
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"Car{"</span> <span class="token operator">+</span>
                 <span class="token string">"brand='"</span> <span class="token operator">+</span> brand <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
                 <span class="token string">", price="</span> <span class="token operator">+</span> price <span class="token operator">+</span>
-                <span class="token string">'&amp;#125;'</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <span class="token string">'}'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>controller测试</p>
 <pre class=" language-java"><code class="language-java">  <span class="token annotation punctuation">@Autowired</span>
     Car car<span class="token punctuation">;</span>
 <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/car"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Car <span class="token function">car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Car <span class="token function">car</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> car<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211009111740036.png" alt="image-20211009111740036"></p>
 <p>方式二：</p>
@@ -732,13 +729,13 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/using.html<span c
 <h3 id="自动配置原理入门"><a href="#自动配置原理入门" class="headerlink" title="自动配置原理入门"></a>自动配置原理入门</h3><h4 id="导入自动配置类"><a href="#导入自动配置类" class="headerlink" title="导入自动配置类"></a>导入自动配置类</h4><pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootConfiguration</span>
 <span class="token annotation punctuation">@EnableAutoConfiguration</span>
 <span class="token annotation punctuation">@ComponentScan</span><span class="token punctuation">(</span>
-    excludeFilters <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token annotation punctuation">@Filter</span><span class="token punctuation">(</span>
+    excludeFilters <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token annotation punctuation">@Filter</span><span class="token punctuation">(</span>
     type <span class="token operator">=</span> FilterType<span class="token punctuation">.</span>CUSTOM<span class="token punctuation">,</span>
-    classes <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>TypeExcludeFilter<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    classes <span class="token operator">=</span> <span class="token punctuation">{</span>TypeExcludeFilter<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span>
 <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token annotation punctuation">@Filter</span><span class="token punctuation">(</span>
     type <span class="token operator">=</span> FilterType<span class="token punctuation">.</span>CUSTOM<span class="token punctuation">,</span>
-    classes <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>AutoConfigurationExcludeFilter<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    classes <span class="token operator">=</span> <span class="token punctuation">{</span>AutoConfigurationExcludeFilter<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">}</span>
 <span class="token punctuation">)</span>
 <span class="token keyword">public</span> @<span class="token keyword">interface</span> <span class="token class-name">SpringBootApplication</span> 
 </code></pre>
@@ -778,19 +775,19 @@ Map<span class="token operator">&lt;</span>String<span class="token punctuation"
 <h3 id="修改默认配置"><a href="#修改默认配置" class="headerlink" title="修改默认配置"></a>修改默认配置</h3><pre class=" language-java"><code class="language-java">        <span class="token annotation punctuation">@Bean</span>
         <span class="token annotation punctuation">@ConditionalOnBean</span><span class="token punctuation">(</span>MultipartResolver<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//容器中有这个类型组件</span>
         <span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span>name <span class="token operator">=</span> DispatcherServlet<span class="token punctuation">.</span>MULTIPART_RESOLVER_BEAN_NAME<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//容器中没有这个名字 multipartResolver 的组件</span>
-        <span class="token keyword">public</span> MultipartResolver <span class="token function">multipartResolver</span><span class="token punctuation">(</span>MultipartResolver resolver<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> MultipartResolver <span class="token function">multipartResolver</span><span class="token punctuation">(</span>MultipartResolver resolver<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token comment" spellcheck="true">//给@Bean标注的方法传入了对象参数，这个参数的值就会从容器中找。</span>
             <span class="token comment" spellcheck="true">//SpringMVC multipartResolver。防止有些用户配置的文件上传解析器不符合规范</span>
             <span class="token comment" spellcheck="true">// Detect if the user has created a MultipartResolver but named it incorrectly</span>
             <span class="token keyword">return</span> resolver<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 给容器中加入了文件上传解析器；
 </code></pre>
 <p>SpringBoot默认会在底层配好所有的组件。但是如果用户自己配置了以用户的优先</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
     <span class="token annotation punctuation">@ConditionalOnMissingBean</span>
-    <span class="token keyword">public</span> CharacterEncodingFilter <span class="token function">characterEncodingFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> CharacterEncodingFilter <span class="token function">characterEncodingFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
 </code></pre>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 总结</span>
 总结：
@@ -850,15 +847,15 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <p>lombok提供了一个日志注解@Slf4j</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Slf4j</span>
 <span class="token annotation punctuation">@RestController</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Autowired</span>
     Car car<span class="token punctuation">;</span>
     <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"/hello"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> String <span class="token function">hande01</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> String name<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> String <span class="token function">hande01</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span> String name<span class="token punctuation">)</span><span class="token punctuation">{</span>
         log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"请求进来了。。。。"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> <span class="token string">"hello springboot"</span><span class="token operator">+</span><span class="token string">"你好"</span><span class="token operator">+</span>name<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211015144119377.png" alt="image-20211015144119377"></p>
 <h3 id="Developer-Tools"><a href="#Developer-Tools" class="headerlink" title="Developer Tools"></a>Developer Tools</h3><p>DevTools 的主要作用是减少重启的时间，它并不是真正的热加载技术（比如：<a target="_blank" rel="noopener" href="https://jrebel.com/software/jrebel/">JRebel</a>)。</p>
@@ -892,7 +889,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 </code></pre>
 <p>对象：键值对的集合。map,hash,set,Object</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># 行内写法</span>
-<span class="token key atrule">k</span><span class="token punctuation">:</span> &amp;<span class="token comment" spellcheck="true">#123;k1: v1,k2: v2,k3: v3&amp;#125;</span>
+<span class="token key atrule">k</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token key atrule">k1</span><span class="token punctuation">:</span> v1<span class="token punctuation">,</span><span class="token key atrule">k2</span><span class="token punctuation">:</span> v2<span class="token punctuation">,</span><span class="token key atrule">k3</span><span class="token punctuation">:</span> v3<span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">#或</span>
 <span class="token key atrule">k</span><span class="token punctuation">:</span>
   <span class="token key atrule">k1</span><span class="token punctuation">:</span> v1
@@ -922,7 +919,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <span class="token annotation punctuation">@Component</span>
 <span class="token annotation punctuation">@ConfigurationProperties</span><span class="token punctuation">(</span>prefix <span class="token operator">=</span> <span class="token string">"person"</span><span class="token punctuation">)</span>
 <span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String userName<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Boolean boss<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Date birth<span class="token punctuation">;</span>
@@ -933,7 +930,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
     <span class="token keyword">private</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> score<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Set<span class="token operator">&lt;</span>Double<span class="token operator">></span> salarys<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> List<span class="token operator">&lt;</span>Pet<span class="token operator">>></span> allPets<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 </code></pre>
 <p>pet类</p>
@@ -942,10 +939,10 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <span class="token keyword">import</span> lombok<span class="token punctuation">.</span>Data<span class="token punctuation">;</span>
 
 <span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Pet</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Pet</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Double weight<span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>application.yml</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">person</span><span class="token punctuation">:</span>
@@ -961,7 +958,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <span class="token comment" spellcheck="true">#  score:</span>
 <span class="token comment" spellcheck="true">#    english: 60</span>
 <span class="token comment" spellcheck="true">#    math: 90</span>
-  <span class="token key atrule">score</span><span class="token punctuation">:</span> &amp;<span class="token comment" spellcheck="true">#123;enlish: 60,math: 92&amp;#125;</span>
+  <span class="token key atrule">score</span><span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token key atrule">enlish</span><span class="token punctuation">:</span> <span class="token number">60</span><span class="token punctuation">,</span><span class="token key atrule">math</span><span class="token punctuation">:</span> <span class="token number">92</span><span class="token punctuation">}</span>
   <span class="token key atrule">salarys</span><span class="token punctuation">:</span>
     <span class="token punctuation">-</span> <span class="token number">9999.98</span>
     <span class="token punctuation">-</span> <span class="token number">8888.78</span>
@@ -970,26 +967,26 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
     <span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">99.99</span>
   <span class="token key atrule">allPets</span><span class="token punctuation">:</span>
     <span class="token key atrule">sick</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> &amp;<span class="token comment" spellcheck="true">#123;name: 大黄,weight: 99.99&amp;#125;</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> 大黄<span class="token punctuation">,</span><span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">99.99</span><span class="token punctuation">}</span>
       <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> 阿狗
         <span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">88.88</span>
       <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> 啊虫
         <span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">66.66</span>
-<span class="token comment" spellcheck="true">#    health: [&amp;#123;name:大黄,weight:99.99&amp;#125;,&amp;#123;&amp;#125;,&amp;#123;&amp;#125;]</span>
+<span class="token comment" spellcheck="true">#    health: [{name:大黄,weight:99.99},{},{}]</span>
     <span class="token key atrule">health</span><span class="token punctuation">:</span>
-      <span class="token punctuation">-</span> &amp;<span class="token comment" spellcheck="true">#123;name: 阿花,weight: 199.99&amp;#125;</span>
-      <span class="token punctuation">-</span> &amp;<span class="token comment" spellcheck="true">#123;name: 阿红,weight: 129.99&amp;#125;</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> 阿花<span class="token punctuation">,</span><span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">199.99</span><span class="token punctuation">}</span>
+      <span class="token punctuation">-</span> <span class="token punctuation">{</span><span class="token key atrule">name</span><span class="token punctuation">:</span> 阿红<span class="token punctuation">,</span><span class="token key atrule">weight</span><span class="token punctuation">:</span> <span class="token number">129.99</span><span class="token punctuation">}</span>
 </code></pre>
 <p>测试controller</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloController</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Autowired</span>
     Person person<span class="token punctuation">;</span>
-    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"/person"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>method <span class="token operator">=</span> RequestMethod<span class="token punctuation">.</span>GET<span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Person <span class="token function">person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"/person"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>method <span class="token operator">=</span> RequestMethod<span class="token punctuation">.</span>GET<span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Person <span class="token function">person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">return</span> person<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211016104710869.png" alt="image-20211016104710869"></p>
 <h3 id="yaml中使用自定义的类配置文件中没有提示"><a href="#yaml中使用自定义的类配置文件中没有提示" class="headerlink" title="yaml中使用自定义的类配置文件中没有提示"></a>yaml中使用自定义的类配置文件中没有提示</h3><p>需要使用一个注解</p>
@@ -1123,15 +1120,15 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@ConditionalOnWebApplication</span><span class="token punctuation">(</span>
     type <span class="token operator">=</span> Type<span class="token punctuation">.</span>SERVLET
 <span class="token punctuation">)</span>
-<span class="token annotation punctuation">@ConditionalOnClass</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>Servlet<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> DispatcherServlet<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> WebMvcConfigurer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-<span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>WebMvcConfigurationSupport<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ConditionalOnClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span>Servlet<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> DispatcherServlet<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> WebMvcConfigurer<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span><span class="token punctuation">{</span>WebMvcConfigurationSupport<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
 <p>查看给容器中配置了什么</p>
 <pre class=" language-java"><code class="language-java"> <span class="token annotation punctuation">@Configuration</span><span class="token punctuation">(</span>
         proxyBeanMethods <span class="token operator">=</span> <span class="token boolean">false</span>
     <span class="token punctuation">)</span>
-    <span class="token annotation punctuation">@Import</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>WebMvcAutoConfiguration<span class="token punctuation">.</span>EnableWebMvcConfiguration<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-    <span class="token annotation punctuation">@EnableConfigurationProperties</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>WebMvcProperties<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> ResourceProperties<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> WebProperties<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Import</span><span class="token punctuation">(</span><span class="token punctuation">{</span>WebMvcAutoConfiguration<span class="token punctuation">.</span>EnableWebMvcConfiguration<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@EnableConfigurationProperties</span><span class="token punctuation">(</span><span class="token punctuation">{</span>WebMvcProperties<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> ResourceProperties<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> WebProperties<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token annotation punctuation">@Order</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">WebMvcAutoConfigurationAdapter</span> <span class="token keyword">implements</span> <span class="token class-name">WebMvcConfigurer</span>
 </code></pre>
@@ -1150,7 +1147,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <p>resourceHandlerRegistrationCustomizerProvider</p>
 <p>dispatcherServletPath</p>
 <p>servletRegistrations</p>
-<pre class=" language-java"><code class="language-java">  <span class="token keyword">public</span> <span class="token function">WebMvcAutoConfigurationAdapter</span><span class="token punctuation">(</span>ResourceProperties resourceProperties<span class="token punctuation">,</span> WebProperties webProperties<span class="token punctuation">,</span> WebMvcProperties mvcProperties<span class="token punctuation">,</span> ListableBeanFactory beanFactory<span class="token punctuation">,</span> ObjectProvider<span class="token operator">&lt;</span>HttpMessageConverters<span class="token operator">></span> messageConvertersProvider<span class="token punctuation">,</span> ObjectProvider<span class="token operator">&lt;</span>WebMvcAutoConfiguration<span class="token punctuation">.</span>ResourceHandlerRegistrationCustomizer<span class="token operator">></span> resourceHandlerRegistrationCustomizerProvider<span class="token punctuation">,</span> ObjectProvider<span class="token operator">&lt;</span>DispatcherServletPath<span class="token operator">></span> dispatcherServletPath<span class="token punctuation">,</span> ObjectProvider<span class="token operator">&lt;</span>ServletRegistrationBean<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">>></span> servletRegistrations<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java">  <span class="token keyword">public</span> <span class="token function">WebMvcAutoConfigurationAdapter</span><span class="token punctuation">(</span>ResourceProperties resourceProperties<span class="token punctuation">,</span> WebProperties webProperties<span class="token punctuation">,</span> WebMvcProperties mvcProperties<span class="token punctuation">,</span> ListableBeanFactory beanFactory<span class="token punctuation">,</span> ObjectProvider<span class="token operator">&lt;</span>HttpMessageConverters<span class="token operator">></span> messageConvertersProvider<span class="token punctuation">,</span> ObjectProvider<span class="token operator">&lt;</span>WebMvcAutoConfiguration<span class="token punctuation">.</span>ResourceHandlerRegistrationCustomizer<span class="token operator">></span> resourceHandlerRegistrationCustomizerProvider<span class="token punctuation">,</span> ObjectProvider<span class="token operator">&lt;</span>DispatcherServletPath<span class="token operator">></span> dispatcherServletPath<span class="token punctuation">,</span> ObjectProvider<span class="token operator">&lt;</span>ServletRegistrationBean<span class="token operator">&lt;</span><span class="token operator">?</span><span class="token operator">>></span> servletRegistrations<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>resourceProperties <span class="token operator">=</span> <span class="token punctuation">(</span>Resources<span class="token punctuation">)</span><span class="token punctuation">(</span>resourceProperties<span class="token punctuation">.</span><span class="token function">hasBeenCustomized</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">?</span> resourceProperties <span class="token operator">:</span> webProperties<span class="token punctuation">.</span><span class="token function">getResources</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>mvcProperties <span class="token operator">=</span> mvcProperties<span class="token punctuation">;</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>beanFactory <span class="token operator">=</span> beanFactory<span class="token punctuation">;</span>
@@ -1159,7 +1156,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
             <span class="token keyword">this</span><span class="token punctuation">.</span>dispatcherServletPath <span class="token operator">=</span> dispatcherServletPath<span class="token punctuation">;</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>servletRegistrations <span class="token operator">=</span> servletRegistrations<span class="token punctuation">;</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span>mvcProperties<span class="token punctuation">.</span><span class="token function">checkConfiguration</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 </code></pre>
 <p>静态资源禁用</p>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
@@ -1168,24 +1165,24 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
       <span class="token key atrule">add-mappings</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
 </code></pre>
 <h3 id="欢迎页"><a href="#欢迎页" class="headerlink" title="欢迎页"></a>欢迎页</h3><pre class=" language-java"><code class="language-java">  <span class="token annotation punctuation">@Bean</span>
-        <span class="token keyword">public</span> WelcomePageHandlerMapping <span class="token function">welcomePageHandlerMapping</span><span class="token punctuation">(</span>ApplicationContext applicationContext<span class="token punctuation">,</span> FormattingConversionService mvcConversionService<span class="token punctuation">,</span> ResourceUrlProvider mvcResourceUrlProvider<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">public</span> WelcomePageHandlerMapping <span class="token function">welcomePageHandlerMapping</span><span class="token punctuation">(</span>ApplicationContext applicationContext<span class="token punctuation">,</span> FormattingConversionService mvcConversionService<span class="token punctuation">,</span> ResourceUrlProvider mvcResourceUrlProvider<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             WelcomePageHandlerMapping welcomePageHandlerMapping <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WelcomePageHandlerMapping</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">TemplateAvailabilityProviders</span><span class="token punctuation">(</span>applicationContext<span class="token punctuation">)</span><span class="token punctuation">,</span> applicationContext<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getWelcomePage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>mvcProperties<span class="token punctuation">.</span><span class="token function">getStaticPathPattern</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             welcomePageHandlerMapping<span class="token punctuation">.</span><span class="token function">setInterceptors</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getInterceptors</span><span class="token punctuation">(</span>mvcConversionService<span class="token punctuation">,</span> mvcResourceUrlProvider<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             welcomePageHandlerMapping<span class="token punctuation">.</span><span class="token function">setCorsConfigurations</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getCorsConfigurations</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">return</span> welcomePageHandlerMapping<span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 </code></pre>
 <p>进入new WelcomePageHandlerMapping</p>
-<pre class=" language-java"><code class="language-java"><span class="token function">WelcomePageHandlerMapping</span><span class="token punctuation">(</span>TemplateAvailabilityProviders templateAvailabilityProviders<span class="token punctuation">,</span> ApplicationContext applicationContext<span class="token punctuation">,</span> Resource welcomePage<span class="token punctuation">,</span> String staticPathPattern<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>welcomePage <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> <span class="token string">"/**"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>staticPathPattern<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"><span class="token function">WelcomePageHandlerMapping</span><span class="token punctuation">(</span>TemplateAvailabilityProviders templateAvailabilityProviders<span class="token punctuation">,</span> ApplicationContext applicationContext<span class="token punctuation">,</span> Resource welcomePage<span class="token punctuation">,</span> String staticPathPattern<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>welcomePage <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> <span class="token string">"/**"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>staticPathPattern<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"Adding welcome page: "</span> <span class="token operator">+</span> welcomePage<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setRootViewName</span><span class="token punctuation">(</span><span class="token string">"forward:index.html"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">welcomeTemplateExists</span><span class="token punctuation">(</span>templateAvailabilityProviders<span class="token punctuation">,</span> applicationContext<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">welcomeTemplateExists</span><span class="token punctuation">(</span>templateAvailabilityProviders<span class="token punctuation">,</span> applicationContext<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             logger<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"Adding welcome page template: index"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setRootViewName</span><span class="token punctuation">(</span><span class="token string">"index"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 </code></pre>
 <h3 id="请求参数的处理"><a href="#请求参数的处理" class="headerlink" title="请求参数的处理"></a>请求参数的处理</h3><ul>
 <li>xxxMappeing</li>
@@ -1208,14 +1205,14 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 </code></pre>
 <p>springboot需要开启spring.mvc.hiddenmethod.filter功能，默认为false</p>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@Bean</span>
-    <span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>HiddenHttpMethodFilter<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@ConditionalOnMissingBean</span><span class="token punctuation">(</span><span class="token punctuation">{</span>HiddenHttpMethodFilter<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token annotation punctuation">@ConditionalOnProperty</span><span class="token punctuation">(</span>
         prefix <span class="token operator">=</span> <span class="token string">"spring.mvc.hiddenmethod.filter"</span><span class="token punctuation">,</span>
-        name <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"enabled"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+        name <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"enabled"</span><span class="token punctuation">}</span>
     <span class="token punctuation">)</span>
-    <span class="token keyword">public</span> OrderedHiddenHttpMethodFilter <span class="token function">hiddenHttpMethodFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> OrderedHiddenHttpMethodFilter <span class="token function">hiddenHttpMethodFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">OrderedHiddenHttpMethodFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 </code></pre>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">spring</span><span class="token punctuation">:</span>
   <span class="token key atrule">mvc</span><span class="token punctuation">:</span>
@@ -1238,26 +1235,26 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
     跳转到子类DispatcherServlet进行研究doservice
       this.doDispatch<span class="token punctuation">(</span>request, response<span class="token punctuation">)</span><span class="token punctuation">;</span>
  <span class="token comment" spellcheck="true"># doDispatch是请求的原理</span>
-   protected void doDispatch<span class="token punctuation">(</span>HttpServletRequest request, HttpServletResponse response<span class="token punctuation">)</span> throws Exception <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+   protected void doDispatch<span class="token punctuation">(</span>HttpServletRequest request, HttpServletResponse response<span class="token punctuation">)</span> throws Exception <span class="token punctuation">{</span>
         HttpServletRequest processedRequest <span class="token operator">=</span> request<span class="token punctuation">;</span>
         HandlerExecutionChain mappedHandler <span class="token operator">=</span> null<span class="token punctuation">;</span>
         boolean multipartRequestParsed <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
         WebAsyncManager asyncManager <span class="token operator">=</span> WebAsyncUtils.getAsyncManager<span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        try <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
-            try <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+        try <span class="token punctuation">{</span>
+            try <span class="token punctuation">{</span>
                 ModelAndView <span class="token function">mv</span> <span class="token operator">=</span> null<span class="token punctuation">;</span>
                 Object dispatchException <span class="token operator">=</span> null<span class="token punctuation">;</span>
 
-                try <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+                try <span class="token punctuation">{</span>
                     processedRequest <span class="token operator">=</span> this.checkMultipart<span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
                     multipartRequestParsed <span class="token operator">=</span> processedRequest <span class="token operator">!=</span> request<span class="token punctuation">;</span>
                     //找到当前请求使用哪个Handler <span class="token punctuation">(</span>controller<span class="token punctuation">)</span> 进行处理
                     mappedHandler <span class="token operator">=</span> this.getHandler<span class="token punctuation">(</span>processedRequest<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span>mappedHandler <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>mappedHandler <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                         this.noHandlerFound<span class="token punctuation">(</span>processedRequest, response<span class="token punctuation">)</span><span class="token punctuation">;</span>
                         <span class="token keyword">return</span><span class="token punctuation">;</span>
-                    <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#125;</span>
+                    <span class="token punctuation">}</span>
 </code></pre>
 <p><a target="_blank" rel="noopener" href="http://localhost:8080/user%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82this.getHandler(processedRequest)">http://localhost:8080/user发送请求this.getHandler(processedRequest)</a>;</p>
 <p>找到当前请求使用哪个Handler (controller) 进行处理</p>
@@ -1267,25 +1264,25 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <p>handlerMappings处理器映射 有5个</p>
 <p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211018155234906.png" alt="image-20211018155234906"></p>
 <p>RequestMapperHandlerMappering:  保存了所有@RequestMappering和handler的映射规则</p>
-<pre class=" language-java"><code class="language-java"> <span class="token keyword">protected</span> HandlerExecutionChain <span class="token function">getHandler</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handlerMappings <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class=" language-java"><code class="language-java"> <span class="token keyword">protected</span> HandlerExecutionChain <span class="token function">getHandler</span><span class="token punctuation">(</span>HttpServletRequest request<span class="token punctuation">)</span> <span class="token keyword">throws</span> Exception <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>handlerMappings <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             Iterator var2 <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handlerMappings<span class="token punctuation">.</span><span class="token function">iterator</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            <span class="token keyword">while</span><span class="token punctuation">(</span>var2<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>var2<span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 HandlerMapping mapping <span class="token operator">=</span> <span class="token punctuation">(</span>HandlerMapping<span class="token punctuation">)</span>var2<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
                 HandlerExecutionChain handler <span class="token operator">=</span> mapping<span class="token punctuation">.</span><span class="token function">getHandler</span><span class="token punctuation">(</span>request<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>handler <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>handler <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                     <span class="token keyword">return</span> handler<span class="token punctuation">;</span>
-                <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-            <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211018160637005.png" alt="image-20211018160637005"></p>
 <p>所有的请求映射都在HadelMappering</p>
 <p>springboot 自动配置了欢迎页的welcomHandleMappering</p>
 <h3 id="RestFul风格请求"><a href="#RestFul风格请求" class="headerlink" title="RestFul风格请求"></a>RestFul风格请求</h3><pre class=" language-html"><code class="language-html">测试基本注解
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/car/3/owner/lisi?age<span class="token punctuation">=</span>18&amp;&amp;inters<span class="token punctuation">=</span>basketball&amp;&amp;inters<span class="token punctuation">=</span>game<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>/car/<span class="token entity" title="&#123;">&amp;#123;</span>id<span class="token entity" title="&#125;">&amp;#125;</span>/owner/<span class="token entity" title="&#123;">&amp;#123;</span>username<span class="token entity" title="&#125;">&amp;#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/car/3/owner/lisi?age<span class="token punctuation">=</span>18&amp;&amp;inters<span class="token punctuation">=</span>basketball&amp;&amp;inters<span class="token punctuation">=</span>game<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>/car/{id}/owner/{username}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>@PathVariable(路径变量)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>@RequestHeader（获取请求头）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>@RequestParam(获取请求参数)<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
@@ -1302,8 +1299,8 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
 </code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ParamterTestController</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/car/&amp;#123;id&amp;#125;/owner/&amp;#123;username&amp;#125;"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ParamterTestController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/car/{id}/owner/{username}"</span><span class="token punctuation">)</span>
     <span class="token keyword">public</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>Object<span class="token operator">></span> <span class="token function">getCar</span><span class="token punctuation">(</span><span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span> Integer id<span class="token punctuation">,</span>
                                      <span class="token annotation punctuation">@PathVariable</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span>  String name<span class="token punctuation">,</span>
                                      <span class="token annotation punctuation">@PathVariable</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> pv<span class="token punctuation">,</span>
@@ -1311,7 +1308,7 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
                                      <span class="token annotation punctuation">@RequestHeader</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> header<span class="token punctuation">,</span>
                                      <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"age"</span><span class="token punctuation">)</span> Integer age<span class="token punctuation">,</span>
                                      <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span><span class="token string">"inters"</span><span class="token punctuation">)</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> inters<span class="token punctuation">,</span>
-                                     <span class="token annotation punctuation">@RequestParam</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> params<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                                     <span class="token annotation punctuation">@RequestParam</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> params<span class="token punctuation">)</span><span class="token punctuation">{</span>
         Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment" spellcheck="true">//        map.put("id",id);</span>
 <span class="token comment" spellcheck="true">//        map.put("name",name);</span>
@@ -1322,17 +1319,17 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
           map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"inters"</span><span class="token punctuation">,</span>inters<span class="token punctuation">)</span><span class="token punctuation">;</span>
           map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"param"</span><span class="token punctuation">,</span>params<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> map<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
     <span class="token comment" spellcheck="true">/**
      * 测试获取请求体中的表单内容
      */</span>
     <span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span><span class="token string">"/save"</span><span class="token punctuation">)</span>
-    <span class="token keyword">public</span> Map <span class="token function">postMethod</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> String content<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> Map <span class="token function">postMethod</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestBody</span> String content<span class="token punctuation">)</span><span class="token punctuation">{</span>
         Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         map<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span><span class="token string">"content"</span><span class="token punctuation">,</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> map<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="复杂参数源码分析"><a href="#复杂参数源码分析" class="headerlink" title="复杂参数源码分析"></a>复杂参数源码分析</h3><p>Map,Model(map、model里面的数据会被放在request请求域requestAttribute)</p>
 <p>Errors/BindingResult</p>
@@ -1353,22 +1350,22 @@ xxxxxAutoConfiguration ---<span class="token operator">></span> 组件  ---<span
  *     宠物年龄：&lt;input name="pet.age"/>
  */</span>
 <span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
     
     <span class="token keyword">private</span> String userName<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Integer age<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Date birth<span class="token punctuation">;</span>
     <span class="token keyword">private</span> Pet pet<span class="token punctuation">;</span>
     
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
 <span class="token annotation punctuation">@Data</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Pet</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Pet</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">private</span> String name<span class="token punctuation">;</span>
     <span class="token keyword">private</span> String age<span class="token punctuation">;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="数据响应与内容协商"><a href="#数据响应与内容协商" class="headerlink" title="数据响应与内容协商"></a>数据响应与内容协商</h3><p>在pom.xml中引入jackson.jar</p>
 <pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
