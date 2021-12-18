@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="个人博客">
+    <meta name="keywords" content="centos安装redis, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>个人博客</title>
+    <title>centos安装redis | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">centos安装redis</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-07
+                    2021-12-18
                 </div>
                 
 
@@ -464,7 +464,66 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>title: tags<br>date: 2018-09-10 18:23:38<br>type: “tags”<br>layout: “tags”</p>
+                <h3 id="centos安装redis"><a href="#centos安装redis" class="headerlink" title="centos安装redis"></a>centos安装redis</h3><p>上传压缩包</p>
+<p>解压到redis目录下</p>
+<p>[root@localhost redis]# tar -zxvf redis-6.2.6.tar.gz</p>
+<p>[root@localhost redis]# cd redis-6.2.6</p>
+<p>输入<strong>make</strong>编译</p>
+<p>如果报gcc命令未找到： yum install -y gcc</p>
+<p>完成后输入make install</p>
+<p>[root@localhost redis-6.2.6]# cd /usr/local/bin<br>[root@localhost bin]# ls -l<br>总用量 19616<br>-rwxr-xr-x  1 root root    1758 8月  12 08:57 jemalloc-config<br>-rwxr-xr-x  1 root root     145 8月  12 08:57 jemalloc.sh<br>-rwxr-xr-x  1 root root  179069 8月  12 08:57 jeprof<br>-rwxr-xr-x. 1 root root    1461 6月  14 2017 libmcrypt-config<br>lrwxrwxrwx  1 root root      12 8月  12 08:58 luajit -&gt; luajit-2.0.4<br>-rwxr-xr-x  1 root root  449296 8月  12 08:58 luajit-2.0.4<br>-rwxr-xr-x. 1 root root   83224 6月  14 2017 mcrypt<br>lrwxrwxrwx. 1 root root       6 8月  11 15:40 mdecrypt -&gt; mcrypt<br>-rwxr-xr-x  1 root root 4829496 12月 18 15:09 redis-benchmark<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-check-aof -&gt; redis-server<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-check-rdb -&gt; redis-server<br>-rwxr-xr-x  1 root root 5003784 12月 18 15:09 redis-cli<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-sentinel -&gt; redis-server<br>-rwxr-xr-x  1 root root 9518904 12月 18 15:09 redis-server<br>[root@localhost bin]# </p>
+<p>[root@localhost bin]# cd /home/redis/redis-6.2.6</p>
+<p>[root@localhost redis-6.2.6]# cd /</p>
+<p>[root@localhost /]# mkdir myredis</p>
+<p>[root@localhost /]# cd /home/redis/redis-6.2.6</p>
+<p>[root@localhost redis-6.2.6]# cp redis.conf  /myredis/</p>
+<p>查看拷贝是否成功：</p>
+<p>[root@localhost redis-6.2.6]# ls -l /myredis/<br>总用量 92<br>-rw-r–r– 1 root root 93724 12月 18 15:20 redis.conf</p>
+<p>[root@localhost redis-6.2.6]# cd /myredis/</p>
+<p>[root@localhost myredis]# vi redis.conf </p>
+<p>将no修改为<strong>daemonize yes</strong></p>
+<p>再打开一个窗口</p>
+<p>[root@localhost ~]# cd /usr/local/bin<br>[root@localhost bin]# ls -l</p>
+<p>[root@localhost bin]# redis-server /myredis/redis.conf </p>
+<p>[root@localhost bin]# redis-cli -p 6379</p>
+<p>输入ping</p>
+<p>得到PONG就ok</p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218153112743.png" alt="image-20211218153112743"></p>
+<p>切换窗口：</p>
+<p>[root@localhost myredis]# ps -ef | grep redis<br>root      10485      1  0 15:29 ?        00:00:00 redis-server 127.0.0.1:6379<br>root      10490  10459  0 15:30 pts/1    00:00:00 redis-cli -p 6379<br>root      10498   5976  0 15:34 pts/0    00:00:00 grep –color=auto redis<br>[root@localhost myredis]# </p>
+<p>关闭：127.0.0.1:6379&gt; shutdown<br>not connected&gt; exit</p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218153631553.png" alt="image-20211218153631553"></p>
+<h3 id="3、设置redis开机自启动"><a href="#3、设置redis开机自启动" class="headerlink" title="3、设置redis开机自启动"></a>3、设置redis开机自启动</h3><p>1、在/etc目录下新建redis目录</p>
+<p>mkdir redis</p>
+<p>[root@iZwz991stxdwj560bfmadtZ etc]# mkdir redis</p>
+<p>2、将/usr/local/redis-4.0.6/redis.conf 文件复制一份到/etc/redis目录下，并命名为6379.conf　　</p>
+<p>[root@iZwz991stxdwj560bfmadtZ redis]#cp /myredis/redis.conf /etc/redis/6379.conf</p>
+<p>3、将redis的启动脚本复制一份放到/etc/init.d目录下</p>
+<p>[root@iZwz991stxdwj560bfmadtZ init.d]# cp /home/redis/redis-6.2.6/utils/redis_init_script /etc/init.d/redisd</p>
+<p>4、设置redis开机自启动</p>
+<p>先切换到/etc/init.d目录下</p>
+<p>然后执行自启命令</p>
+<p>[root@localhost init.d]# chkconfig redisd on</p>
+<p>[root@localhost init.d]# service redisd start<br>Starting Redis server…</p>
+<p>现在可以直接已服务的形式启动和关闭redis了</p>
+<p>启动：</p>
+<p>service redisd start　</p>
+<p>关闭：</p>
+<p>方法1：service redisd stop</p>
+<p>参考自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zuidongfeng/p/8032505.html">https://www.cnblogs.com/zuidongfeng/p/8032505.html</a></p>
+<p>关闭虚拟机，重启：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218162034766.png" alt="image-20211218162034766"></p>
+<p>使用redis可视化连接时必须设置redis的连接密码：123456</p>
+<p>切换到redis.conf配置文件所在位置</p>
+<p>[root@localhost redis]# cd /etc/redis<br>[root@localhost redis]# ll<br>总用量 92<br>-rw-r–r– 1 root root 93759 12月 18 18:05 6379.conf</p>
+<p>[root@localhost redis]# vi 6379.conf </p>
+<p>requirepass foobared下面按i进入编辑模式添加</p>
+<p>requirepass 123456</p>
+<p>然后esc返回，:wq</p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218193528938.png" alt="image-20211218193528938"></p>
+<p>开放6379端口</p>
+<p>[root@localhost redis]# firewall-cmd –zone=public –add-port=6379/tcp –permanent<br>success<br>[root@localhost redis]# firewall-cmd –reload<br>success<br>[root@localhost redis]# </p>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218192650529.png" alt="image-20211218192650529"></p>
 
                 
             </div>
@@ -491,7 +550,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://weiyyds.github.io/tags/index.html">https://weiyyds.github.io/tags/index.html</a>
+                    <a href="https://weiyyds.github.io/2021/12/18/centos-an-zhuang-redis/">https://weiyyds.github.io/2021/12/18/centos-an-zhuang-redis/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -703,13 +762,13 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2021/12/18/centos-an-zhuang-redis/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="centos安装redis">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">centos安装redis</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -720,7 +779,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-18
                             </span>
                         <span class="publish-author">
                             
@@ -738,16 +797,16 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/tags/index.html">
+                <a href="/2021/12/15/an-zhuang-idea2021.x/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="安装idea2021.x无限重置过期时间">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">安装idea2021.x无限重置过期时间</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -758,7 +817,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
                             </span>
                         <span class="publish-author">
                             
@@ -768,7 +827,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
