@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="centos安装redis, 个人博客">
+    <meta name="keywords" content="Docker的学习目录, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>centos安装redis | 个人博客</title>
+    <title>Docker的学习目录 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">centos安装redis</h1>
+                    <h1 class="description center-align post-title">Docker的学习目录</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-18
+                    2022-08-08
                 </div>
                 
 
@@ -464,67 +464,365 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="centos安装redis"><a href="#centos安装redis" class="headerlink" title="centos安装redis"></a>centos安装redis</h3><p>上传压缩包</p>
-<p>解压到redis目录下</p>
-<p>[root@localhost redis]# tar -zxvf redis-6.2.6.tar.gz</p>
-<p>[root@localhost redis]# cd redis-6.2.6</p>
-<p>输入<strong>make</strong>编译</p>
-<p>如果报gcc命令未找到： yum install -y gcc</p>
-<p>完成后输入make install</p>
-<p>[root@localhost redis-6.2.6]# cd /usr/local/bin<br>[root@localhost bin]# ls -l<br>总用量 19616<br>-rwxr-xr-x  1 root root    1758 8月  12 08:57 jemalloc-config<br>-rwxr-xr-x  1 root root     145 8月  12 08:57 jemalloc.sh<br>-rwxr-xr-x  1 root root  179069 8月  12 08:57 jeprof<br>-rwxr-xr-x. 1 root root    1461 6月  14 2017 libmcrypt-config<br>lrwxrwxrwx  1 root root      12 8月  12 08:58 luajit -&gt; luajit-2.0.4<br>-rwxr-xr-x  1 root root  449296 8月  12 08:58 luajit-2.0.4<br>-rwxr-xr-x. 1 root root   83224 6月  14 2017 mcrypt<br>lrwxrwxrwx. 1 root root       6 8月  11 15:40 mdecrypt -&gt; mcrypt<br>-rwxr-xr-x  1 root root 4829496 12月 18 15:09 redis-benchmark<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-check-aof -&gt; redis-server<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-check-rdb -&gt; redis-server<br>-rwxr-xr-x  1 root root 5003784 12月 18 15:09 redis-cli<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-sentinel -&gt; redis-server<br>-rwxr-xr-x  1 root root 9518904 12月 18 15:09 redis-server<br>[root@localhost bin]# </p>
-<p>[root@localhost bin]# cd /home/redis/redis-6.2.6</p>
-<p>[root@localhost redis-6.2.6]# cd /</p>
-<p>[root@localhost /]# mkdir myredis</p>
-<p>[root@localhost /]# cd /home/redis/redis-6.2.6</p>
-<p>[root@localhost redis-6.2.6]# cp redis.conf  /myredis/</p>
-<p>查看拷贝是否成功：</p>
-<p>[root@localhost redis-6.2.6]# ls -l /myredis/<br>总用量 92<br>-rw-r–r– 1 root root 93724 12月 18 15:20 redis.conf</p>
-<p>[root@localhost redis-6.2.6]# cd /myredis/</p>
-<p>[root@localhost myredis]# vi redis.conf </p>
-<p>将no修改为<strong>daemonize yes</strong></p>
-<p>再打开一个窗口</p>
-<p>[root@localhost ~]# cd /usr/local/bin<br>[root@localhost bin]# ls -l</p>
-<p>[root@localhost bin]# redis-server /myredis/redis.conf </p>
-<p>[root@localhost bin]# redis-cli -p 6379</p>
-<p>输入ping</p>
-<p>得到PONG就ok</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218153112743.png" alt="image-20211218153112743"></p>
-<p>切换窗口：</p>
-<p>[root@localhost myredis]# ps -ef | grep redis<br>root      10485      1  0 15:29 ?        00:00:00 redis-server 127.0.0.1:6379<br>root      10490  10459  0 15:30 pts/1    00:00:00 redis-cli -p 6379<br>root      10498   5976  0 15:34 pts/0    00:00:00 grep –color=auto redis<br>[root@localhost myredis]# </p>
-<p>关闭：127.0.0.1:6379&gt; shutdown<br>not connected&gt; exit</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218153631553.png" alt="image-20211218153631553"></p>
-<h3 id="3、设置redis开机自启动"><a href="#3、设置redis开机自启动" class="headerlink" title="3、设置redis开机自启动"></a>3、设置redis开机自启动</h3><p>1、在/etc目录下新建redis目录</p>
-<p>mkdir redis</p>
-<p>[root@iZwz991stxdwj560bfmadtZ etc]# mkdir redis</p>
-<p>2、将/usr/local/redis-4.0.6/redis.conf 文件复制一份到/etc/redis目录下，并命名为6379.conf　　</p>
-<p>[root@iZwz991stxdwj560bfmadtZ redis]#cp /myredis/redis.conf /etc/redis/6379.conf</p>
-<p>3、将redis的启动脚本复制一份放到/etc/init.d目录下</p>
-<p>[root@iZwz991stxdwj560bfmadtZ init.d]# cp /home/redis/redis-6.2.6/utils/redis_init_script /etc/init.d/redisd</p>
-<p>4、设置redis开机自启动</p>
-<p>先切换到/etc/init.d目录下</p>
-<p>然后执行自启命令</p>
-<p>[root@localhost init.d]# chkconfig redisd on</p>
-<p>[root@localhost init.d]# service redisd start<br>Starting Redis server…</p>
-<p>现在可以直接已服务的形式启动和关闭redis了</p>
-<p>启动：</p>
-<p>service redisd start　</p>
-<p>关闭：</p>
-<p>方法1：service redisd stop</p>
-<p>参考自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zuidongfeng/p/8032505.html">https://www.cnblogs.com/zuidongfeng/p/8032505.html</a></p>
-<p>关闭虚拟机，重启：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218162034766.png" alt="image-20211218162034766"></p>
-<p>使用redis可视化连接时必须设置redis的连接密码：123456</p>
-<p>切换到redis.conf配置文件所在位置</p>
-<p>[root@localhost redis]# cd /etc/redis<br>[root@localhost redis]# ll<br>总用量 92<br>-rw-r–r– 1 root root 93759 12月 18 18:05 6379.conf</p>
-<p>[root@localhost redis]# vi 6379.conf </p>
-<p>requirepass foobared下面按i进入编辑模式添加</p>
-<p>requirepass 123456</p>
-<p>然后esc返回，:wq</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218193528938.png" alt="image-20211218193528938"></p>
-<p>开放6379端口</p>
-<p>[root@localhost redis]# firewall-cmd –zone=public –add-port=6379/tcp –permanent<br>success<br>[root@localhost redis]# firewall-cmd –reload<br>success<br>[root@localhost redis]# </p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218192650529.png" alt="image-20211218192650529"></p>
+                <h3 id="Docker的学习目录"><a href="#Docker的学习目录" class="headerlink" title="Docker的学习目录"></a>Docker的学习目录</h3><blockquote>
+<p>学习Docker前最好提前学会Linux、SpringBoot</p>
+</blockquote>
+<blockquote>
+<p>Docker学习</p>
+</blockquote>
+<ul>
+<li>Docker 概述</li>
+<li>Docker 安装</li>
+<li>Docker 命令<ul>
+<li>镜像命令</li>
+<li>容器命令</li>
+<li>操作命令</li>
+<li>……</li>
+</ul>
+</li>
+<li>聊聊Docker镜像</li>
+<li>容器数据卷</li>
+<li>DockerFile(把自己的java项目打包成镜像)</li>
+<li>Docker网络原理</li>
+<li>IDEA整合Docker</li>
+<li>Docker Compose(集群)</li>
+<li>Docker Swarm（简化版的k8s）</li>
+<li>CI\CD Jenkins</li>
+</ul>
+<h3 id="Docker概述"><a href="#Docker概述" class="headerlink" title="Docker概述"></a>Docker概述</h3><h4 id="Docker为什么出现"><a href="#Docker为什么出现" class="headerlink" title="Docker为什么出现?"></a>Docker为什么出现?</h4><hr>
+<p>一款产品：开发-上线–两套环境!应用环境，应用配置</p>
+<p>开发–运维：问题：我在我的电脑可以运行!版本更新了，导致服务不可用！对于运维来说考验十分大！</p>
+<p>开发学会运维相关知识：开发即运维</p>
+<p>环境配置是十分麻烦的，每一个机器都要部署环境，费时费力！</p>
+<p>发布一个项目(jar+环境mysql、redis、es。。。。)，项目能不能带上环境安装打包</p>
+<p>Docker给以上问题提出了解决方案！！</p>
+<p>java –apk–发布(应用商店)—某某人使用apk—下载安装即可以</p>
+<p>java–jar(环境)—打包项目带上环境(镜像)—Docker仓库—运维下载我们发布的镜像–直接运行即可</p>
+<p>docker官网：<a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com/</a></p>
+<p>docker文档：<a target="_blank" rel="noopener" href="https://docs.docker.com/">https://docs.docker.com/</a></p>
+<p>仓库地址：<a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com/</a>   # 可以把镜像发布上去</p>
+<p>Docker的思想来自于集装箱</p>
+<p>JRE—-多个应用（端口冲突）—原来都是交叉</p>
+<p>隔离：docker的核心思想：打包装箱！！每个箱子都是互相隔离的。</p>
+<h3 id="Docker的历史"><a href="#Docker的历史" class="headerlink" title="Docker的历史"></a>Docker的历史</h3><p>2010，几个搞it的小伙子，在美国创立一家dotCloud公司</p>
+<p>最初做paas,后来采用自己的技术（容器化技术），开发一套工具命名为docker</p>
+<p>Docker 公司位于旧金山，由法裔美籍开发者和企业家 Solumon Hykes 创立</p>
+<p>有意思的是，Docker 公司起初是一家名为 dotCloud 的平台即服务（Platform-as-a-Service, PaaS）提供商。</p>
+<p>底层技术上，dotCloud 平台利用了 Linux 容器技术。为了方便创建和管理这些容器，dotCloud 开发了一套内部工具，之后被命名为“Docker”。Docker就是这样诞生的！</p>
+<p>2013年，dotCloud 的 PaaS 业务并不景气，公司需要寻求新的突破。于是他们聘请了 Ben Golub 作为新的 CEO，将公司重命名为“Docker”，放弃dotCloud PaaS 平台，怀揣着“将 Docker 和容器技术推向全世界”的使命，开启了一段新的征程。</p>
+<p>如今 Docker 公司被普遍认为是一家创新型科技公司，据说其市场价值约为 10 亿美元。Docker 公司已经通过多轮融资，吸纳了来自硅谷的几家风投公司的累计超过 2.4 亿美元的投资。</p>
+<p>几乎所有的融资都发生在公司更名为“Docker”之后。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </p>
+<p>开源</p>
+<p>2013Docker开源</p>
+<p>越来越多的人发现docker的优点!火了</p>
+<p>Docker为什么这么火?因为轻巧</p>
+<p>在容器化技术出来之前，使用的是虚拟机技术</p>
+<p>通过软件虚拟出一台或者多台电脑，但是笨重！！</p>
+<p>虚拟机属于虚拟化技术，Docker是容器化技术也是虚拟化技术！！</p>
+<p>Docker是基于go语言开发的！</p>
+<h3 id="Docker的安装"><a href="#Docker的安装" class="headerlink" title="Docker的安装"></a>Docker的安装</h3><h4 id="Docker的基本组成"><a href="#Docker的基本组成" class="headerlink" title="Docker的基本组成"></a>Docker的基本组成</h4><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/1.jpg" alt="1"></p>
+<p>镜像：（Image）</p>
+<p>docker镜像就好比是一个模板，可以通过这个模板来创建容器服务,</p>
+<p>例如：tomcat镜像=》run=》tomcat容器(提供服务)，通过这个镜像可以创建多个容器（最终服务运行或者项目运行就是在容器中的）</p>
+<p>容器：(container)</p>
+<p>Docker利用容器技术、独立运行一个或者一个组的应用、通过镜像来创建的。</p>
+<p>容器启动、停止、删除、基本命令!</p>
+<p>目前就可以把这个容器理解为一个简易的Linux系统</p>
+<p>仓库:（Registry）</p>
+<p>仓库就是用来存放镜像的地方！</p>
+<p>仓库分为公有仓库、私有仓库</p>
+<p>Docker Hub(默认是国外）（配置镜像加速）</p>
+<p>阿里云、华为云…都提供有容器服务器（收费）</p>
+<h4 id="开始安装Docker"><a href="#开始安装Docker" class="headerlink" title="开始安装Docker"></a>开始安装Docker</h4><blockquote>
+<p>环境准备</p>
+</blockquote>
+<p>1.需要会一定Linux基础知识</p>
+<p>2.centos7 虚拟机</p>
+<p>3.我们使用xshell连接本地或者远程服务器进行操作</p>
+<blockquote>
+<p>环境查看</p>
+</blockquote>
+<pre class=" language-shell"><code class="language-shell"># Linux内核是3.10以上的
+[root@localhost ~]# uname -r
+3.10.0-1127.el7.x86_64
+#系统版本 centos7
+[root@localhost ~]# cat /etc/os-release 
+NAME="CentOS Linux"
+VERSION="7 (Core)"
+ID="centos"
+ID_LIKE="rhel fedora"
+VERSION_ID="7"
+PRETTY_NAME="CentOS Linux 7 (Core)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:centos:centos:7"
+HOME_URL="https://www.centos.org/"
+BUG_REPORT_URL="https://bugs.centos.org/"
 
+CENTOS_MANTISBT_PROJECT="CentOS-7"
+CENTOS_MANTISBT_PROJECT_VERSION="7"
+REDHAT_SUPPORT_PRODUCT="centos"
+REDHAT_SUPPORT_PRODUCT_VERSION="7"
+</code></pre>
+<blockquote>
+<p>安装</p>
+</blockquote>
+<p>文档：<a target="_blank" rel="noopener" href="https://docs.docker.com/get-docker/">https://docs.docker.com/get-docker/</a></p>
+<pre class=" language-shell"><code class="language-shell"># 卸载旧的版本
+[root@localhost ~]# yum remove docker \
+>                   docker-client \
+>                   docker-client-latest \
+>                   docker-common \
+>                   docker-latest \
+>                   docker-latest-logrotate \
+>                   docker-logrotate \
+>                   docker-engine
+已加载插件：fastestmirror
+参数 docker 没有匹配
+参数 docker-client 没有匹配
+参数 docker-client-latest 没有匹配
+参数 docker-common 没有匹配
+参数 docker-latest 没有匹配
+参数 docker-latest-logrotate 没有匹配
+参数 docker-logrotate 没有匹配
+参数 docker-engine 没有匹配
+不删除任何软件包
+# 2.需要的安装包
+# Install the yum-utils package (which provides the yum-config-manager utility) and set up the stable repository.
+yum install -y yum-utils
+# 3.设置镜像仓库地址
+yum-config-manager \
+    --add-repo \
+    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+    # https://download.docker.com/linux/centos/docker-ce.repo #默认是国外的地址
+# 4.更新yum软件包索引 
+yum makecache fast
+# 5.安装docker相关的
+# docker-ce社区版 ee企业版
+yum install docker-ce docker-ce-cli containerd.io
+# 6.启动docker
+systemctl start docker
+# 查看docker是否安装成功
+[root@localhost ~]# docker version
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20220119114204121.png" alt="image-20220119114204121"></p>
+<pre class=" language-shell"><code class="language-shell"># helloword
+# Verify that Docker Engine is installed correctly by running the hello-world image.
+[root@localhost ~]# docker run hello-world
+Unable to find image 'hello-world:latest' locally
+</code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20220119114540082.png" alt="image-20220119114540082"></p>
+<pre class=" language-shell"><code class="language-shell"># 查看一下下载的这个hello-word镜像 是否存在
+[root@localhost ~]# clear
+[root@localhost ~]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+hello-world   latest    feb5d9fea6a5   3 months ago   13.3kB
+</code></pre>
+<p>了解：卸载docker</p>
+<pre class=" language-shell"><code class="language-shell">yum remove docker-ce docker-ce-cli containerd.io
+rm -rf /var/lib/docker
+rm -rf /var/lib/containerd
+</code></pre>
+<h3 id="阿里云镜像加速（免费）"><a href="#阿里云镜像加速（免费）" class="headerlink" title="阿里云镜像加速（免费）"></a>阿里云镜像加速（免费）</h3><p>登录阿里云，搜索容器镜像服务=》镜像加速器</p>
+<p>使用加速器可以提升获取Docker官方镜像的速度</p>
+<pre class=" language-shell"><code class="language-shell">sudo mkdir -p /etc/docker
+
+# 备选的镜像地址有：
+# 中科院：https://docker.mirrors.ustc.edu.cn
+# 阿里云：https://6kx4zyno.mirror.aliyuncs.com
+sudo tee /etc/docker/daemon.json <<-'EOF' { "registry-mirrors": ["https: mu03bz48.mirror.aliyuncs.com"] } eof sudo systemctl daemon-reload restart docker < code></-'EOF'></code></pre>
+<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20220119123923347.png" alt="image-20220119123923347"></p>
+<h3 id="Run的流程和Docker原理"><a href="#Run的流程和Docker原理" class="headerlink" title="Run的流程和Docker原理"></a>Run的流程和Docker原理</h3><p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20220120154419249.png" alt="image-20220120154419249"></p>
+<h3 id="Docker的常用命令"><a href="#Docker的常用命令" class="headerlink" title="Docker的常用命令"></a>Docker的常用命令</h3><p>帮助命令</p>
+<pre class=" language-shell"><code class="language-shell">docker version #显示docker的版本信息
+[root@localhost ~]# systemctl start docker #启动docker服务端
+[root@localhost ~]# docker info #查看docker的详细信息
+docker 命令 --help #万能命令
+[root@localhost ~]# docker --help
+</code></pre>
+<p>命令官方文档:<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/">https://docs.docker.com/engine/reference/commandline/</a></p>
+<h3 id="镜像命令"><a href="#镜像命令" class="headerlink" title="镜像命令"></a>镜像命令</h3><pre class=" language-shell"><code class="language-shell">[root@localhost ~]# docker images
+REPOSITORY(repository仓库源)     TAG（tag镜像标签）       IMAGE ID       CREATED  创建时间      SIZE
+hello-world   latest    feb5d9fea6a5   3 months ago   13.3kB
+####################
+[root@localhost ~]# docker images --help
+
+  -a, --all             Show all images (default hides intermediate images)
+      --digests         Show digests
+  -f, --filter filter   Filter output based on conditions provided
+      --format string   Pretty-print images using a Go template
+      --no-trunc        Don't truncate output
+  -q, --quiet           Only show image IDs
+####################
+[root@localhost ~]# docker images -aq
+feb5d9fea6a5
+
+
+</code></pre>
+<p>查找镜像</p>
+<p>网页版<a target="_blank" rel="noopener" href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+<p>命令</p>
+<pre class=" language-shell"><code class="language-shell">[root@localhost ~]# docker search mysql
+NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+mysql                             MySQL is a widely used, open-source relation…   11995     [OK]       
+mariadb                           MariaDB Server is a high performing open sou…   4591      [OK]       
+mysql/mysql-server                Optimized MySQL Server Docker images. Create…   898                  [OK]
+percona                           Percona Server is a fork of the MySQL relati…   568       [OK]       
+phpmyadmin                        phpMyAdmin - A web interface for MySQL and M…   429       [OK]       
+###############################################
+[root@localhost ~]# clear
+[root@localhost ~]# docker search mysql --filter=STARS=9000  # 搜索出来的就是starts大于9000的
+NAME      DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+mysql     MySQL is a widely used, open-source relation…   11995     [OK]
+</code></pre>
+<p>下载镜像</p>
+<pre class=" language-shell"><code class="language-shell">[root@localhost ~]# clear
+[root@localhost ~]# docker pull --help
+
+Usage:  docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+Pull an image or a repository from a registry
+
+Options:
+  -a, --all-tags                Download all tagged images in the repository
+      --disable-content-trust   Skip image verification (default true)
+      --platform string         Set platform if server is multi-platform capable
+  -q, --quiet                   Suppress verbose output
+# docker pull 镜像名[:tag]
+[root@localhost ~]# docker pull mysql
+Using default tag: latest #如果不写tag,默认就是最新版
+latest: Pulling from library/mysql
+72a69066d2fe: Pull complete # 分层下载：docker image的核心  联合文件系统
+93619dbc5b36: Pull complete 
+99da31dd6142: Pull complete 
+626033c43d70: Pull complete 
+37d5d7efb64e: Pull complete 
+ac563158d721: Pull complete 
+d2ba16033dad: Pull complete 
+688ba7d5c01a: Pull complete 
+00e060b6d11d: Pull complete 
+1c04857f594f: Pull complete 
+4d7cfa90e6ea: Pull complete 
+e0431212d27d: Pull complete 
+Digest: sha256:e9027fe4d91c0153429607251656806cc784e914937271037f7738bd5b8e7709 # 签名
+Status: Downloaded newer image for mysql:latest
+docker.io/library/mysql:latest #真实地址
+
+ docker pull mysql等价于 docker pull docker.io/library/mysql:latest
+ # 指定版本下载
+[root@localhost ~]# docker pull mysql:5.7
+5.7: Pulling from library/mysql
+72a69066d2fe: Already exists 
+93619dbc5b36: Already exists 
+99da31dd6142: Already exists 
+626033c43d70: Already exists 
+37d5d7efb64e: Already exists 
+ac563158d721: Already exists 
+d2ba16033dad: Already exists 
+0ceb82207cd7: Pull complete 
+37f2405cae96: Pull complete 
+e2482e017e53: Pull complete 
+70deed891d42: Pull complete 
+Digest: sha256:f2ad209efe9c67104167fc609cca6973c8422939491c9345270175a300419f94
+Status: Downloaded newer image for mysql:5.7
+docker.io/library/mysql:5.7
+###
+[root@localhost ~]# clear
+[root@localhost ~]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+mysql         5.7       c20987f18b13   4 weeks ago    448MB
+mysql         latest    3218b38490ce   4 weeks ago    516MB
+hello-world   latest    feb5d9fea6a5   3 months ago   13.3kB
+# 删除镜像(通过id删除)
+[root@localhost ~]# docker rmi -f 3218b38490ce
+[root@localhost ~]# docker rmi -f 容器id 容器id 容器id # 删除多个镜像
+</code></pre>
+<pre class=" language-shell"><code class="language-shell">[root@localhost ~]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+mysql         5.7       c20987f18b13   4 weeks ago    448MB
+hello-world   latest    feb5d9fea6a5   3 months ago   13.3kB
+[root@localhost ~]# docker rmi -f $(docker images -aq) # 删除全部的镜像
+Untagged: mysql:5.7
+Untagged: mysql@sha256:f2ad209efe9c67104167fc609cca6973c8422939491c9345270175a300419f94
+Deleted: sha256:c20987f18b130f9d144c9828df630417e2a9523148930dc3963e9d0dab302a76
+Deleted: sha256:6567396b065ee734fb2dbb80c8923324a778426dfd01969f091f1ab2d52c7989
+Deleted: sha256:0910f12649d514b471f1583a16f672ab67e3d29d9833a15dc2df50dd5536e40f
+Deleted: sha256:6682af2fb40555c448b84711c7302d0f86fc716bbe9c7dc7dbd739ef9d757150
+Deleted: sha256:5c062c3ac20f576d24454e74781511a5f96739f289edaadf2de934d06e910b92
+Deleted: sha256:8805862fcb6ef9deb32d4218e9e6377f35fb351a8be7abafdf1da358b2b287ba
+Deleted: sha256:872d2f24c4c64a6795e86958fde075a273c35c82815f0a5025cce41edfef50c7
+Deleted: sha256:6fdb3143b79e1be7181d32748dd9d4a845056dfe16ee4c827410e0edef5ad3da
+Deleted: sha256:b0527c827c82a8f8f37f706fcb86c420819bb7d707a8de7b664b9ca491c96838
+Deleted: sha256:75147f61f29796d6528486d8b1f9fb5d122709ea35620f8ffcea0e0ad2ab0cd0
+Deleted: sha256:2938c71ddf01643685879bf182b626f0a53b1356138ef73c40496182e84548aa
+Deleted: sha256:ad6b69b549193f81b039a1d478bc896f6e460c77c1849a4374ab95f9a3d2cea2
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:975f4b14f326b05db86e16de00144f9c12257553bba9484fed41f9b6f2257800
+Deleted: sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+</code></pre>
+<h3 id="容器命令"><a href="#容器命令" class="headerlink" title="容器命令"></a>容器命令</h3><p>说明：我们必须有了镜像才可以创建容器，下载一个centos镜像来学习。</p>
+<pre class=" language-shell"><code class="language-shell">[root@localhost ~]# docker pull centos
+</code></pre>
+<h4 id="新建容器并启动"><a href="#新建容器并启动" class="headerlink" title="新建容器并启动"></a>新建容器并启动</h4><pre class=" language-shell"><code class="language-shell">docker run [可选参数] image
+
+# 参数说明
+--name="Name" 容器名字
+-d 后台方式运行
+-it 使用交互方式运行
+-p 指定容器端口 -p 8080:8080
+    -p ip:主机端口:容器端口
+    -p 主机端口:容器端口(常用)
+    -p 容器端口
+    容器端口
+-P(大写) 随机指定端口
+[root@localhost ~]# docker run -it centos /bin/bash
+[root@daa8f28f058e /]# 
+[root@daa8f28f058e /]# ls #查看容器内部的centos
+bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[root@daa8f28f058e /]# exit # 退出容器
+exit
+</code></pre>
+<h4 id="列出所有的运行的容器"><a href="#列出所有的运行的容器" class="headerlink" title="列出所有的运行的容器"></a>列出所有的运行的容器</h4><pre class=" language-shell"><code class="language-shell">[root@localhost ~]# docker ps #查看运行的容器
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[root@localhost ~]# docker ps -a # 查看曾经运行过的容器
+
+CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS                     PORTS     NAMES
+daa8f28f058e   centos         "/bin/bash"   9 minutes ago   Exited (0) 3 minutes ago             romantic_robinson
+31198a160bb2   feb5d9fea6a5   "/hello"      4 days ago      Exited (0) 4 days ago                boring_bohr
+
+[root@localhost ~]# docker ps -a -n=1 #-n：显示最近创建的容器
+CONTAINER ID   IMAGE     COMMAND       CREATED          STATUS                     PORTS     NAMES
+daa8f28f058e   centos    "/bin/bash"   14 minutes ago   Exited (0) 7 minutes ago             romantic_robinson
+[root@localhost ~]# docker ps -aq # -q 查看容器id
+daa8f28f058e
+31198a160bb2
+</code></pre>
+<h4 id="退出容器"><a href="#退出容器" class="headerlink" title="退出容器"></a>退出容器</h4><pre class=" language-shell"><code class="language-shell">exit #直接容器停止并退出
+ctrl + p+q # 容器不停止运行，然后退出
+</code></pre>
+<h4 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h4><pre class=" language-shell"><code class="language-shell">docker rm 容器id #删除指定的容器，但不能删除正在运行的容器，需要加-f强制删除
+docker rm -f $(docker ps -aq) # 删除所有的容器
+docker ps -a -q|xargs docker rm # 删除所有的容器
+</code></pre>
+<pre class=" language-shell"><code class="language-shell">[root@localhost ~]# docker rm daa8f28f058e
+daa8f28f058e
+[root@localhost ~]# docker ps -a
+CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS                  PORTS     NAMES
+fb343cdecdc4   centos         "/bin/bash"   8 minutes ago   Up 8 minutes                      keen_brahmagupta
+31198a160bb2   feb5d9fea6a5   "/hello"      4 days ago      Exited (0) 4 days ago             boring_bohr
+[root@localhost ~]# docker rm -f fb343cdecdc4
+fb343cdecdc4
+[root@localhost ~]# docker rm -f $(docker ps -aq)
+31198a160bb2
+[root@localhost ~]# docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+[root@localhost ~]# 
+</code></pre>
+<h4 id="启动和停止容器的操作"><a href="#启动和停止容器的操作" class="headerlink" title="启动和停止容器的操作"></a>启动和停止容器的操作</h4><pre class=" language-shell"><code class="language-shell">docker start 容器id # 启动容器
+docker restart 容器id # 重启容器
+docker stop 容器id # 停止当前正在运行的容器
+docker kill 容器id # 强制停止当前的容器
+</code></pre>
+<h4 id="常用的其他命令"><a href="#常用的其他命令" class="headerlink" title="常用的其他命令"></a>常用的其他命令</h4>
                 
             </div>
             <hr/>
@@ -550,7 +848,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://weiyyds.github.io/2021/12/18/centos-an-zhuang-redis/">https://weiyyds.github.io/2021/12/18/centos-an-zhuang-redis/</a>
+                    <a href="https://weiyyds.github.io/2022/08/08/docker/">https://weiyyds.github.io/2022/08/08/docker/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -757,54 +1055,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/12/29/springsecurity-yu-shiro/">
+                <a href="/2022/08/08/docker/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SpringSecurity与Shiro">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Docker的学习目录">
                         
-                        <span class="card-title">SpringSecurity与Shiro</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            wei
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/12/15/an-zhuang-idea2021.x/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="安装idea2021.x无限重置过期时间">
-                        
-                        <span class="card-title">安装idea2021.x无限重置过期时间</span>
+                        <span class="card-title">Docker的学习目录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -815,7 +1077,45 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            wei
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/05/21/github-shang-chuan-tu-pian-shang-chuan-cheng-gong-dan-typora-bu-xian-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Github上传图片上传成功但Typora不显示">
+                        
+                        <span class="card-title">Github上传图片上传成功但Typora不显示</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-21
                             </span>
                         <span class="publish-author">
                             
