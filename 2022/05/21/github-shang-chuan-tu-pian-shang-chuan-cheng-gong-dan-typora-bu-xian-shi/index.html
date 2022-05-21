@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Git简易的命令行入门教程, 个人博客">
+    <meta name="keywords" content="Github上传图片上传成功但Typora不显示, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git简易的命令行入门教程 | 个人博客</title>
+    <title>Github上传图片上传成功但Typora不显示 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git简易的命令行入门教程</h1>
+                    <h1 class="description center-align post-title">Github上传图片上传成功但Typora不显示</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-01-08
+                    2022-05-21
                 </div>
                 
 
@@ -464,48 +464,56 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="简易的命令行入门教程"><a href="#简易的命令行入门教程" class="headerlink" title="简易的命令行入门教程:"></a>简易的命令行入门教程:</h4><h3 id="Gitee"><a href="#Gitee" class="headerlink" title="Gitee"></a>Gitee</h3><p>Git 全局设置:</p>
-<pre class=" language-shell"><code class="language-shell">git config --global user.name "黄少伟-h"
-git config --global user.email "9032347+huang-shaowei-h@user.noreply.gitee.com"
+                <h2 id="Github上传图片上传成功但Typora不显示"><a href="#Github上传图片上传成功但Typora不显示" class="headerlink" title="Github上传图片上传成功但Typora不显示"></a>Github上传图片上传成功但Typora不显示</h2><p>问题复现：<br>typora图片上传只有路径，显示图片加载失败，<br>打开了错误日志文件：</p>
+<pre class=" language-bash"><code class="language-bash">2022-05-20 18:46:30 <span class="token punctuation">[</span>PicGo INFO<span class="token punctuation">]</span> detect second instance 
+2022-05-20 18:47:02 <span class="token punctuation">[</span>PicGo INFO<span class="token punctuation">]</span> Before transform 
+2022-05-20 18:47:02 <span class="token punctuation">[</span>PicGo INFO<span class="token punctuation">]</span> Transforming<span class="token punctuation">..</span>. Current transformer is <span class="token punctuation">[</span>path<span class="token punctuation">]</span> 
+2022-05-20 18:47:02 <span class="token punctuation">[</span>PicGo INFO<span class="token punctuation">]</span> Before upload 
+2022-05-20 18:47:02 <span class="token punctuation">[</span>PicGo INFO<span class="token punctuation">]</span> beforeUploadPlugins: renameFn running 
+2022-05-20 18:47:02 <span class="token punctuation">[</span>PicGo INFO<span class="token punctuation">]</span> Uploading<span class="token punctuation">..</span>. Current uploader is <span class="token punctuation">[</span>github<span class="token punctuation">]</span> 
+2022-05-20 18:47:02 <span class="token punctuation">[</span>PicGo WARN<span class="token punctuation">]</span> failed 
+2022-05-20 18:47:02 <span class="token punctuation">[</span>PicGo ERROR<span class="token punctuation">]</span> 
+------Error Stack Begin------
+StatusCodeError: 422 - <span class="token punctuation">{</span><span class="token string">"message"</span><span class="token keyword">:</span><span class="token string">"Invalid request.\n\n\"sha\" wasn't supplied."</span>,<span class="token string">"documentation_url"</span><span class="token keyword">:</span><span class="token string">"https://docs.github.com/rest/reference/repos#create-or-update-file-contents"</span><span class="token punctuation">}</span>
+    at new StatusCodeError <span class="token punctuation">(</span>E:\picgo\resources\app.asar\node_modules\request-promise-core\lib\errors.js:32:15<span class="token punctuation">)</span>
+    at Request.plumbing.callback <span class="token punctuation">(</span>E:\picgo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:104:33<span class="token punctuation">)</span>
+    at Request.RP<span class="token variable">$callback</span> <span class="token punctuation">[</span>as _callback<span class="token punctuation">]</span> <span class="token punctuation">(</span>E:\picgo\resources\app.asar\node_modules\request-promise-core\lib\plumbing.js:46:31<span class="token punctuation">)</span>
+    at Request.self.callback <span class="token punctuation">(</span>E:\picgo\resources\app.asar\node_modules\request\request.js:185:22<span class="token punctuation">)</span>
+    at Request.emit <span class="token punctuation">(</span>events.js:200:13<span class="token punctuation">)</span>
+    at Request.<span class="token operator">&lt;</span>anonymous<span class="token operator">></span> <span class="token punctuation">(</span>E:\picgo\resources\app.asar\node_modules\request\request.js:1154:10<span class="token punctuation">)</span>
+    at Request.emit <span class="token punctuation">(</span>events.js:200:13<span class="token punctuation">)</span>
+    at IncomingMessage.<span class="token operator">&lt;</span>anonymous<span class="token operator">></span> <span class="token punctuation">(</span>E:\picgo\resources\app.asar\node_modules\request\request.js:1076:12<span class="token punctuation">)</span>
+    at Object.onceWrapper <span class="token punctuation">(</span>events.js:288:20<span class="token punctuation">)</span>
+    at IncomingMessage.emit <span class="token punctuation">(</span>events.js:205:15<span class="token punctuation">)</span>
+-------Error Stack End------- 
+2022-05-20 18:47:02 <span class="token punctuation">[</span>PicGo ERROR<span class="token punctuation">]</span> 
 </code></pre>
-<p>创建 git 仓库:</p>
-<pre class=" language-shell"><code class="language-shell">mkdir owl-login
-cd owl-login
-git init 
-touch README.md
-git add README.md
-git add .  #添加所有文件到本地仓库
-git commit -m "first commit"
-git remote add origin https://gitee.com/huang-shaowei-h/owl-login.git
-git push -u origin "master"
+<p>首先修改了hosts文件<br>通过 <a target="_blank" rel="noopener" href="https://www.ipaddress.com/">https://www.ipaddress.com</a> 这个网站，先找到域名 githubusercontent.com 对应的 ip 地址：xxx.xxx.xxx.xxx</p>
+<p><img src="https://img-blog.csdnimg.cn/7624d6de92124862960e0b8458adf697.png" alt="img"></p>
+<p><img src="https://img-blog.csdnimg.cn/856bae4509eb4296970c19126303c3fe.png" alt="img"></p>
+<p>输入完后点击搜索<br>然后划到最下面看到ip：http后面的就是</p>
+<p><img src="https://img-blog.csdnimg.cn/98ad774f062a4de3ba37170fb1e349e7.png" alt="img"></p>
+<p>199.168.223.1（上面查询的ip）  avatars.githubusercontent.com<br>下面的片段只需替换avatars.githubusercontent.com的ip，其他复制即可</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># GitHub</span>
+140.82.113.3      github.com
+140.82.114.20     gist.github.com
+151.101.184.133    assets-cdn.github.com
+151.101.184.133    raw.githubusercontent.com
+199.232.28.133     raw.githubusercontent.com 
+151.101.184.133    gist.githubusercontent.com
+151.101.184.133    cloud.githubusercontent.com
+151.101.184.133    camo.githubusercontent.com
+199.168.223.1  avatars.githubusercontent.com
+ <span class="token comment" spellcheck="true"># GitHub End</span>
 </code></pre>
-<p>已有仓库?</p>
-<pre class=" language-shell"><code class="language-shell">cd existing_git_repo
-git remote add origin https://gitee.com/huang-shaowei-h/owl-login.git
-git push -u origin "master"
-</code></pre>
-<p>扩充：</p>
-<p>把新的代码上传到gitee</p>
-<p>1.把旧的代码下载下来</p>
-<p>git clone <a target="_blank" rel="noopener" href="https://gitee.com/huang-shaowei-h/all-java-project.git">https://gitee.com/huang-shaowei-h/all-java-project.git</a></p>
-<p>把新的代码放进去</p>
-<p>cmd命令进入</p>
-<p>git add .  #添加所有文件到本地仓库</p>
-<p>git commit -m “first commit”</p>
-<p>git push -u origin “master”</p>
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><h3 id="…or-create-a-new-repository-on-the-command-line"><a href="#…or-create-a-new-repository-on-the-command-line" class="headerlink" title="…or create a new repository on the command line"></a>…or create a new repository on the command line</h3><pre class=" language-shell"><code class="language-shell">echo "# university-java-project" >> README.md
-git init
-git add README.md
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/weiyyds/university-java-project.git
-git push -u origin main
-</code></pre>
-<h3 id="…or-push-an-existing-repository-from-the-command-line"><a href="#…or-push-an-existing-repository-from-the-command-line" class="headerlink" title="…or push an existing repository from the command line"></a>…or push an existing repository from the command line</h3><pre class=" language-shell"><code class="language-shell">git remote add origin https://github.com/weiyyds/university-java-project.git
-git branch -M main
-git push -u origin main
-</code></pre>
+<p>放进hosts文件中</p>
+<p><img src="https://img-blog.csdnimg.cn/94f156162df34af4bc698ceac23f729d.png" alt="img"></p>
+<p>hosts文件所在位置：</p>
+<p><img src="https://img-blog.csdnimg.cn/9d4db5961b38492ca52502ed2ac41e12.png" alt="img"></p>
+<p>不过需要把hosts文件复制出来，修改完后再替换回去，要不然是没有权限修改的！<br>打开 CMD 使用命令刷新下本地的 DNS 缓存<br>ipconfig/flush<br>typora的图片出来了几个，但还是有很多没有显示！，查询了github的图片上传成功了！，但是浏览器访问时cdn.jsdelivr.net响应时间过长，我怀疑jsdeliver崩了，但我没有证据<br>百度了很久才看到是由于<strong>Jsdelivr CDN 加速服务又被 DNS 污染了</strong></p>
+<p>附带了临时解决方法<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42951560/article/details/124844571">https://blog.csdn.net/qq_42951560/article/details/124844571</a><br>因此，我们只需要批量将图片或其它静态资源链接中的 cdn.jsdelivr.net 替换为 fastly.jsdelivr.net 即可，等待官方将该问题修复后，再替换回来。</p>
+<p><img src="https://img-blog.csdnimg.cn/c9097dd367d841a88612e58df64800e1.png" alt="img"></p>
+<p>问题暂时解决！</p>
 
                 
             </div>
@@ -532,7 +540,7 @@ git push -u origin main
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://weiyyds.github.io/2022/01/08/git-jian-dan-cao-zuo/">https://weiyyds.github.io/2022/01/08/git-jian-dan-cao-zuo/</a>
+                    <a href="https://weiyyds.github.io/2022/05/21/github-shang-chuan-tu-pian-shang-chuan-cheng-gong-dan-typora-bu-xian-shi/">https://weiyyds.github.io/2022/05/21/github-shang-chuan-tu-pian-shang-chuan-cheng-gong-dan-typora-bu-xian-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -739,54 +747,18 @@ git push -u origin main
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/09/ren-wu/">
+                <a href="/2022/05/21/github-shang-chuan-tu-pian-shang-chuan-cheng-gong-dan-typora-bu-xian-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="任务">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Github上传图片上传成功但Typora不显示">
                         
-                        <span class="card-title">任务</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-09
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            wei
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/01/08/swagger/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Swagger">
-                        
-                        <span class="card-title">Swagger</span>
+                        <span class="card-title">Github上传图片上传成功但Typora不显示</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -797,7 +769,45 @@ git push -u origin main
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            wei
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/01/25/kai-fa-yin-le-wang-zhan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-25
                             </span>
                         <span class="publish-author">
                             
