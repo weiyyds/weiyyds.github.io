@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="centos安装redis, 个人博客">
+    <meta name="keywords" content="Mybatis_Plus, 个人博客">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>centos安装redis | 个人博客</title>
+    <title>Mybatis_Plus | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">centos安装redis</h1>
+                    <h1 class="description center-align post-title">Mybatis_Plus</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-18
+                    2022-05-23
                 </div>
                 
 
@@ -464,66 +464,92 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="centos安装redis"><a href="#centos安装redis" class="headerlink" title="centos安装redis"></a>centos安装redis</h3><p>上传压缩包</p>
-<p>解压到redis目录下</p>
-<p>[root@localhost redis]# tar -zxvf redis-6.2.6.tar.gz</p>
-<p>[root@localhost redis]# cd redis-6.2.6</p>
-<p>输入<strong>make</strong>编译</p>
-<p>如果报gcc命令未找到： yum install -y gcc</p>
-<p>完成后输入make install</p>
-<p>[root@localhost redis-6.2.6]# cd /usr/local/bin<br>[root@localhost bin]# ls -l<br>总用量 19616<br>-rwxr-xr-x  1 root root    1758 8月  12 08:57 jemalloc-config<br>-rwxr-xr-x  1 root root     145 8月  12 08:57 jemalloc.sh<br>-rwxr-xr-x  1 root root  179069 8月  12 08:57 jeprof<br>-rwxr-xr-x. 1 root root    1461 6月  14 2017 libmcrypt-config<br>lrwxrwxrwx  1 root root      12 8月  12 08:58 luajit -&gt; luajit-2.0.4<br>-rwxr-xr-x  1 root root  449296 8月  12 08:58 luajit-2.0.4<br>-rwxr-xr-x. 1 root root   83224 6月  14 2017 mcrypt<br>lrwxrwxrwx. 1 root root       6 8月  11 15:40 mdecrypt -&gt; mcrypt<br>-rwxr-xr-x  1 root root 4829496 12月 18 15:09 redis-benchmark<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-check-aof -&gt; redis-server<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-check-rdb -&gt; redis-server<br>-rwxr-xr-x  1 root root 5003784 12月 18 15:09 redis-cli<br>lrwxrwxrwx  1 root root      12 12月 18 15:09 redis-sentinel -&gt; redis-server<br>-rwxr-xr-x  1 root root 9518904 12月 18 15:09 redis-server<br>[root@localhost bin]# </p>
-<p>[root@localhost bin]# cd /home/redis/redis-6.2.6</p>
-<p>[root@localhost redis-6.2.6]# cd /</p>
-<p>[root@localhost /]# mkdir myredis</p>
-<p>[root@localhost /]# cd /home/redis/redis-6.2.6</p>
-<p>[root@localhost redis-6.2.6]# cp redis.conf  /myredis/</p>
-<p>查看拷贝是否成功：</p>
-<p>[root@localhost redis-6.2.6]# ls -l /myredis/<br>总用量 92<br>-rw-r–r– 1 root root 93724 12月 18 15:20 redis.conf</p>
-<p>[root@localhost redis-6.2.6]# cd /myredis/</p>
-<p>[root@localhost myredis]# vi redis.conf </p>
-<p>将no修改为<strong>daemonize yes</strong></p>
-<p>再打开一个窗口</p>
-<p>[root@localhost ~]# cd /usr/local/bin<br>[root@localhost bin]# ls -l</p>
-<p>[root@localhost bin]# redis-server /myredis/redis.conf </p>
-<p>[root@localhost bin]# redis-cli -p 6379</p>
-<p>输入ping</p>
-<p>得到PONG就ok</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218153112743.png" alt="image-20211218153112743"></p>
-<p>切换窗口：</p>
-<p>[root@localhost myredis]# ps -ef | grep redis<br>root      10485      1  0 15:29 ?        00:00:00 redis-server 127.0.0.1:6379<br>root      10490  10459  0 15:30 pts/1    00:00:00 redis-cli -p 6379<br>root      10498   5976  0 15:34 pts/0    00:00:00 grep –color=auto redis<br>[root@localhost myredis]# </p>
-<p>关闭：127.0.0.1:6379&gt; shutdown<br>not connected&gt; exit</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218153631553.png" alt="image-20211218153631553"></p>
-<h3 id="3、设置redis开机自启动"><a href="#3、设置redis开机自启动" class="headerlink" title="3、设置redis开机自启动"></a>3、设置redis开机自启动</h3><p>1、在/etc目录下新建redis目录</p>
-<p>mkdir redis</p>
-<p>[root@iZwz991stxdwj560bfmadtZ etc]# mkdir redis</p>
-<p>2、将/usr/local/redis-4.0.6/redis.conf 文件复制一份到/etc/redis目录下，并命名为6379.conf　　</p>
-<p>[root@iZwz991stxdwj560bfmadtZ redis]#cp /myredis/redis.conf /etc/redis/6379.conf</p>
-<p>3、将redis的启动脚本复制一份放到/etc/init.d目录下</p>
-<p>[root@iZwz991stxdwj560bfmadtZ init.d]# cp /home/redis/redis-6.2.6/utils/redis_init_script /etc/init.d/redisd</p>
-<p>4、设置redis开机自启动</p>
-<p>先切换到/etc/init.d目录下</p>
-<p>然后执行自启命令</p>
-<p>[root@localhost init.d]# chkconfig redisd on</p>
-<p>[root@localhost init.d]# service redisd start<br>Starting Redis server…</p>
-<p>现在可以直接已服务的形式启动和关闭redis了</p>
-<p>启动：</p>
-<p>service redisd start　</p>
-<p>关闭：</p>
-<p>方法1：service redisd stop</p>
-<p>参考自：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zuidongfeng/p/8032505.html">https://www.cnblogs.com/zuidongfeng/p/8032505.html</a></p>
-<p>关闭虚拟机，重启：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218162034766.png" alt="image-20211218162034766"></p>
-<p>使用redis可视化连接时必须设置redis的连接密码：123456</p>
-<p>切换到redis.conf配置文件所在位置</p>
-<p>[root@localhost redis]# cd /etc/redis<br>[root@localhost redis]# ll<br>总用量 92<br>-rw-r–r– 1 root root 93759 12月 18 18:05 6379.conf</p>
-<p>[root@localhost redis]# vi 6379.conf </p>
-<p>requirepass foobared下面按i进入编辑模式添加</p>
-<p>requirepass 123456</p>
-<p>然后esc返回，:wq</p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218193528938.png" alt="image-20211218193528938"></p>
-<p>开放6379端口</p>
-<p>[root@localhost redis]# firewall-cmd –zone=public –add-port=6379/tcp –permanent<br>success<br>[root@localhost redis]# firewall-cmd –reload<br>success<br>[root@localhost redis]# </p>
-<p><img src="https://cdn.jsdelivr.net/gh/weiyyds/Image/image-20211218192650529.png" alt="image-20211218192650529"></p>
+                <h3 id="Mybatis-Plus学习"><a href="#Mybatis-Plus学习" class="headerlink" title="Mybatis_Plus学习"></a>Mybatis_Plus学习</h3><p>文档：<a target="_blank" rel="noopener" href="https://baomidou.com/">https://baomidou.com/</a></p>
+<p>此数据来自文档</p>
+<h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><pre class=" language-shell"><code class="language-shell">CREATE TABLE user
+(
+    id BIGINT(20) NOT NULL COMMENT '主键ID',
+    NAME VARCHAR(30) NULL DEFAULT NULL COMMENT '姓名',
+    age INT(11) NULL DEFAULT NULL COMMENT '年龄',
+    email VARCHAR(50) NULL DEFAULT NULL COMMENT '邮箱',
+    PRIMARY KEY (id)
+);
+</code></pre>
+<h3 id="添加数据"><a href="#添加数据" class="headerlink" title="添加数据"></a>添加数据</h3><pre class=" language-shell"><code class="language-shell">INSERT INTO user (id, name, age, email) VALUES
+(1, 'Jone', 18, 'test1@baomidou.com'),
+(2, 'Jack', 20, 'test2@baomidou.com'),
+(3, 'Tom', 28, 'test3@baomidou.com'),
+(4, 'Sandy', 21, 'test4@baomidou.com'),
+(5, 'Billie', 24, 'test5@baomidou.com');
+</code></pre>
+<h3 id="创建springboot工程"><a href="#创建springboot工程" class="headerlink" title="创建springboot工程"></a>创建springboot工程</h3><p>引入依赖：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>mysql.version</span><span class="token punctuation">></span></span>5.1.41<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>mysql.version</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!--mybatis-plus--></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.baomidou<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mybatis-plus-boot-starter<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.5.1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- mysql--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>mysql<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>mysql-connector-java<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span class="token punctuation">></span></span>runtime<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- lombok--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.projectlombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>lombok<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>optional</span><span class="token punctuation">></span></span>true<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>optional</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>yml配置</p>
+<pre class=" language-yml"><code class="language-yml">spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource #默认的数据源
+    driver-class-name: com.mysql.jdbc.Driver  #mysql驱动
+    url: jdbc:mysql://localhost:3306/mybatis_plus?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+</code></pre>
+<p>实体类：</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * 用户实体类
+ */</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">User</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span>  Long id<span class="token punctuation">;</span>
+    <span class="token keyword">private</span>  String name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> Integer age<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String email<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>mapper接口</p>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+ * UserMapper接口持久层
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">UserMapper</span> <span class="token keyword">extends</span> <span class="token class-name">BaseMapper</span><span class="token operator">&lt;</span>User<span class="token operator">></span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<p>测试</p>
+<pre class=" language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootTest</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MybatisPlusTest</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Autowired</span>
+    UserMapper userMapper<span class="token punctuation">;</span>
+    <span class="token annotation punctuation">@Test</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">testSelectList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//通过条件构造器查询一个list集合，若没有条件，则可以设置null参数</span>
+        List<span class="token operator">&lt;</span>User<span class="token operator">></span> users <span class="token operator">=</span> userMapper<span class="token punctuation">.</span><span class="token function">selectList</span><span class="token punctuation">(</span>null<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        users<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>out<span class="token operator">:</span><span class="token operator">:</span>println<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="日志配置"><a href="#日志配置" class="headerlink" title="日志配置"></a>日志配置</h3><pre class=" language-yml"><code class="language-yml">#日志配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+</code></pre>
 
                 
             </div>
@@ -550,7 +576,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://weiyyds.github.io/2021/12/18/centos-an-zhuang-redis/">https://weiyyds.github.io/2021/12/18/centos-an-zhuang-redis/</a>
+                    <a href="https://weiyyds.github.io/2022/05/23/mybatis-plus-xue-xi/">https://weiyyds.github.io/2022/05/23/mybatis-plus-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -761,13 +787,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/29/springsecurity-yu-shiro/">
+                <a href="/2022/08/08/docker/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="SpringSecurity与Shiro">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Docker的学习目录">
                         
-                        <span class="card-title">SpringSecurity与Shiro</span>
+                        <span class="card-title">Docker的学习目录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -778,7 +804,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-29
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
                         </span>
                         <span class="publish-author">
                             
@@ -798,13 +824,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/15/an-zhuang-idea2021.x/">
+                <a href="/2022/05/21/github-shang-chuan-tu-pian-shang-chuan-cheng-gong-dan-typora-bu-xian-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="安装idea2021.x无限重置过期时间">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Github上传图片上传成功但Typora不显示">
                         
-                        <span class="card-title">安装idea2021.x无限重置过期时间</span>
+                        <span class="card-title">Github上传图片上传成功但Typora不显示</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -815,7 +841,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-21
                             </span>
                         <span class="publish-author">
                             
